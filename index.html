@@ -324,6 +324,14 @@
 </div>
 <main class="main">
 
+  <!-- Objetivo da Operação -->
+  <div class="crono-card">
+    <div class="sh"><span class="icon">&#127919;</span> Objetivo da Opera&ccedil;&atilde;o</div>
+    <div class="comm-body">
+      <div class="comm-text"><strong>Objetivo:</strong> reduzir a incid&ecirc;ncia de motocicletas com escapamento irregular e demais infra&ccedil;&otilde;es de tr&acirc;nsito associadas &agrave; perturba&ccedil;&atilde;o sonora, por meio de bloqueio com fiscaliza&ccedil;&atilde;o qualificada e uso de etil&ocirc;metro, no hor&aacute;rio e local definidos pela OS n&ordm; 2BPMI-023/500/26.</div>
+    </div>
+  </div>
+
   <!-- Cronograma -->
   <div class="crono-card">
     <div class="sh"><span class="icon">&#128338;</span> Cronograma &mdash; 1&ordm; Bloqueio</div>
@@ -331,7 +339,7 @@
       <div class="crono-item estac"><span class="crono-seq">Prele&ccedil;&atilde;o</span><span class="crono-label">Base da 5&ordf; Cia</span><span class="crono-hora">15h00</span></div>
       <div class="crono-item bloqueio"><span class="crono-seq">Bloqueio</span><span class="crono-label">Pra&ccedil;a N. Sra. da Concei&ccedil;&atilde;o &mdash; Guararapes</span><span class="crono-hora">15h30 &ndash; 17h30</span></div>
       <div class="crono-item etilo"><span class="crono-seq">Etil&ocirc;metro</span><span class="crono-label">Ativo e Passivo durante o bloqueio</span><span class="crono-hora">15h30 &ndash; 17h30</span></div>
-      <div class="crono-item tabul"><span class="crono-seq">Resultado Parcial</span><span class="crono-label">Encaminhar &agrave; Sala de Op. e ao Supervisor</span><span class="crono-hora">At&eacute; 17h40</span></div>
+      <div class="crono-item tabul"><span class="crono-seq">Encaminhamento do Resultado</span><span class="crono-label">Encaminhar &agrave; Sala de Op. e ao Supervisor</span><span class="crono-hora">At&eacute; 17h40</span></div>
     </div>
   </div>
 
@@ -350,15 +358,11 @@
     <div class="comm-body">
       <div class="comm-row">
         <div class="comm-num">1</div>
-        <div class="comm-text"><strong>Prele&ccedil;&atilde;o (15h00) &mdash; Cmt: Subten PM Dantas:</strong> refor&ccedil;ar que o <strong>foco total da opera&ccedil;&atilde;o &eacute; a fiscaliza&ccedil;&atilde;o de motocicletas</strong>, com &ecirc;nfase em irregularidades &mdash; especialmente <strong>escapamento irregular</strong>. Orientar sobre abordagem qualificada, seguran&ccedil;a do bloqueio, distribui&ccedil;&atilde;o de fun&ccedil;&otilde;es e uso do etil&ocirc;metro.</div>
+        <div class="comm-text"><strong>Prele&ccedil;&atilde;o (15h00) &mdash; Cmt: Subten PM Dantas.</strong> Conte&uacute;do da prele&ccedil;&atilde;o conforme item 2 do Checklist abaixo.</div>
       </div>
       <div class="comm-row">
         <div class="comm-num">2</div>
         <div class="comm-text"><strong>Acionamentos urgentes ao CGP-5</strong> (retransmite ao CFP): acidentes, pris&otilde;es em flagrante, apreens&otilde;es de relevo e solicita&ccedil;&atilde;o de refor&ccedil;o. Acionar <em>durante</em> o fato &mdash; n&atilde;o aguardar o encerramento.</div>
-      </div>
-      <div class="comm-row">
-        <div class="comm-num">3</div>
-        <div class="comm-text"><strong>Encerramento:</strong> encaminhar resultado parcial &agrave; <strong>Sala de Opera&ccedil;&otilde;es</strong> e ao <strong>Supervisor da Opera&ccedil;&atilde;o, Cap PM Josemar (Cmt 5&ordf; Cia)</strong>, at&eacute; <span class="comm-deadline">17h40</span>. Dados consolidados no Sicoordop n&ordm; 20686013 at&eacute; <span class="comm-deadline">00h00</span>.</div>
       </div>
     </div>
   </div>
@@ -391,9 +395,13 @@
         <div class="check-box"></div>
         <div class="check-text">Documentar fotograficamente: antes do in&iacute;cio, durante e ao encerramento do bloqueio. <span class="tag tag-red">obrigat&oacute;rio</span></div>
       </div>
-      <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
+      <div class="check-item urgente" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">Comunicar imediatamente ao <strong>CGP-5</strong>, o qual retransmitir&aacute; ao CFP, ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e resultados relevantes. <span class="tag tag-gold">priorit&aacute;rio</span></div>
+        <div class="check-text">Comunicar imediatamente ao <strong>CGP-5</strong>, o qual retransmitir&aacute; ao CFP, ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e resultados relevantes. <span class="tag tag-red">obrigat&oacute;rio</span></div>
+      </div>
+      <div class="check-item urgente" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Em caso de recusa de parada, fuga ou constata&ccedil;&atilde;o de condu&ccedil;&atilde;o sob efeito de &aacute;lcool com necessidade de condu&ccedil;&atilde;o &agrave; autoridade: proceder conforme protocolo padr&atilde;o de ocorr&ecirc;ncia e comunicar de imediato ao <strong>CGP-5</strong>. <span class="tag tag-red">obrigat&oacute;rio</span></div>
       </div>
       <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
@@ -488,7 +496,7 @@ Relato do per&iacute;odo:
     </div>
   </div>
 
-  <div class="check-card"><div class="ref-note"><strong>Documentos-base:</strong> OS n&ordm; 2BPMI-023/500/26, de 25 JUN 2026. Per&iacute;odo total da OS: 26 JUN 2026, das 15h00 &agrave;s 00h00. Resultados consolidados: Sicoordop, mapa-for&ccedil;a n&ordm; 20686013, at&eacute; 00h00.</div></div>
+  <div class="check-card"><div class="ref-note"><strong>Documento-base:</strong> OS n&ordm; 2BPMI-023/500/26, de 25 JUN 2026.</div></div>
 
 </main>
 <footer class="footer">
@@ -523,6 +531,14 @@ Relato do per&iacute;odo:
 </div>
 <main class="main">
 
+  <!-- Objetivo da Operação -->
+  <div class="crono-card">
+    <div class="sh"><span class="icon">&#127919;</span> Objetivo da Opera&ccedil;&atilde;o</div>
+    <div class="comm-body">
+      <div class="comm-text"><strong>Objetivo:</strong> reduzir a incid&ecirc;ncia de motocicletas com escapamento irregular e demais infra&ccedil;&otilde;es de tr&acirc;nsito associadas &agrave; perturba&ccedil;&atilde;o sonora, por meio de bloqueio com fiscaliza&ccedil;&atilde;o qualificada e uso de etil&ocirc;metro, no hor&aacute;rio e local definidos pela OS n&ordm; 2BPMI-023/500/26.</div>
+    </div>
+  </div>
+
   <!-- Cronograma -->
   <div class="crono-card">
     <div class="sh"><span class="icon">&#128338;</span> Cronograma &mdash; 2&ordm; Bloqueio</div>
@@ -530,7 +546,7 @@ Relato do per&iacute;odo:
       <div class="crono-item estac"><span class="crono-seq">Prele&ccedil;&atilde;o</span><span class="crono-label">Valpara&iacute;so &mdash; local do bloqueio</span><span class="crono-hora">18h30</span></div>
       <div class="crono-item bloqueio"><span class="crono-seq">Bloqueio</span><span class="crono-label">Av. Nove de Julho x R. Padre Mauro Eduardo</span><span class="crono-hora">19h00 &ndash; 21h00</span></div>
       <div class="crono-item etilo"><span class="crono-seq">Etil&ocirc;metro</span><span class="crono-label">Ativo e Passivo durante o bloqueio</span><span class="crono-hora">19h00 &ndash; 21h00</span></div>
-      <div class="crono-item tabul"><span class="crono-seq">Lan&ccedil;amento</span><span class="crono-label">Sicoordop &mdash; mapa-for&ccedil;a n&ordm; 20686013</span><span class="crono-hora">At&eacute; 00h00</span></div>
+      <div class="crono-item tabul"><span class="crono-seq">Encaminhamento do Resultado</span><span class="crono-label">Sicoordop &mdash; mapa-for&ccedil;a n&ordm; 20686013</span><span class="crono-hora">At&eacute; 00h00</span></div>
     </div>
   </div>
 
@@ -549,15 +565,11 @@ Relato do per&iacute;odo:
     <div class="comm-body">
       <div class="comm-row">
         <div class="comm-num">1</div>
-        <div class="comm-text"><strong>Prele&ccedil;&atilde;o em Valpara&iacute;so (18h30) &mdash; Cmt: Subten PM Gleiton:</strong> refor&ccedil;ar que o <strong>foco total da opera&ccedil;&atilde;o &eacute; a fiscaliza&ccedil;&atilde;o de motocicletas</strong>, com &ecirc;nfase em irregularidades &mdash; especialmente <strong>escapamento irregular</strong>. Orientar sobre abordagem qualificada, seguran&ccedil;a do bloqueio, distribui&ccedil;&atilde;o de fun&ccedil;&otilde;es e uso do etil&ocirc;metro.</div>
+        <div class="comm-text"><strong>Prele&ccedil;&atilde;o em Valpara&iacute;so (18h30) &mdash; Cmt: Subten PM Gleiton.</strong> Conte&uacute;do da prele&ccedil;&atilde;o conforme item 2 do Checklist abaixo.</div>
       </div>
       <div class="comm-row">
         <div class="comm-num">2</div>
         <div class="comm-text"><strong>Acionamentos urgentes ao CGP-5</strong> (retransmite ao CFP): acidentes, pris&otilde;es em flagrante, apreens&otilde;es de relevo e solicita&ccedil;&atilde;o de refor&ccedil;o. Acionar <em>durante</em> o fato &mdash; n&atilde;o aguardar o encerramento.</div>
-      </div>
-      <div class="comm-row">
-        <div class="comm-num">3</div>
-        <div class="comm-text"><strong>Fechamento:</strong> encaminhar resultados &agrave; <strong>Sala de Opera&ccedil;&otilde;es</strong> e ao <strong>Supervisor da Opera&ccedil;&atilde;o, Cap PM Josemar (Cmt 5&ordf; Cia)</strong>. Consolidar no Sicoordop/mapa-for&ccedil;a n&ordm; 20686013 impreterivelmente at&eacute; <span class="comm-deadline">00h00</span>.</div>
       </div>
     </div>
   </div>
@@ -590,9 +602,13 @@ Relato do per&iacute;odo:
         <div class="check-box"></div>
         <div class="check-text">Documentar fotograficamente: antes do in&iacute;cio, durante e ao encerramento do bloqueio. <span class="tag tag-red">obrigat&oacute;rio</span></div>
       </div>
-      <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
+      <div class="check-item urgente" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">Comunicar imediatamente ao <strong>CGP-5</strong>, o qual retransmitir&aacute; ao CFP, ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e resultados relevantes. <span class="tag tag-gold">priorit&aacute;rio</span></div>
+        <div class="check-text">Comunicar imediatamente ao <strong>CGP-5</strong>, o qual retransmitir&aacute; ao CFP, ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e resultados relevantes. <span class="tag tag-red">obrigat&oacute;rio</span></div>
+      </div>
+      <div class="check-item urgente" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Em caso de recusa de parada, fuga ou constata&ccedil;&atilde;o de condu&ccedil;&atilde;o sob efeito de &aacute;lcool com necessidade de condu&ccedil;&atilde;o &agrave; autoridade: proceder conforme protocolo padr&atilde;o de ocorr&ecirc;ncia e comunicar de imediato ao <strong>CGP-5</strong>. <span class="tag tag-red">obrigat&oacute;rio</span></div>
       </div>
       <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
@@ -699,7 +715,7 @@ Relato do per&iacute;odo:
     </div>
   </div>
 
-  <div class="check-card"><div class="ref-note"><strong>Documentos-base:</strong> OS n&ordm; 2BPMI-023/500/26, de 25 JUN 2026. Per&iacute;odo total da OS: 26 JUN 2026, das 15h00 &agrave;s 00h00. Resultados consolidados: Sicoordop, mapa-for&ccedil;a n&ordm; 20686013, at&eacute; 00h00.</div></div>
+  <div class="check-card"><div class="ref-note"><strong>Documento-base:</strong> OS n&ordm; 2BPMI-023/500/26, de 25 JUN 2026.</div></div>
 
 </main>
 <footer class="footer">
