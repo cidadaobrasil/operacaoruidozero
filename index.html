@@ -278,6 +278,13 @@
     .tab-btn    { font-size: 10px; padding: 12px 4px; letter-spacing: .3px; }
     .main       { padding: 10px 8px 20px; }
   }
+  /* ── COMANDO ────────────────────────── */
+  .sh-cmd    { background: #4A148C; }
+  .crono-item.cmt     { border-left-color: #4A148C; }
+  .crono-item.cmt-sup { border-left-color: var(--ouro); }
+  .crono-hora.crono-cmt  { color: #4A148C; }
+  .crono-hora.crono-ouro { color: #7A5200; font-weight: 800; }
+
   @media print {
     .tabbar { display: none; }
     .page   { display: block !important; }
@@ -324,7 +331,17 @@
       <div class="crono-item estac"><span class="crono-seq">Prele&ccedil;&atilde;o</span><span class="crono-label">Base da 5&ordf; Cia</span><span class="crono-hora">15h00</span></div>
       <div class="crono-item bloqueio"><span class="crono-seq">Bloqueio</span><span class="crono-label">Pra&ccedil;a N. Sra. da Concei&ccedil;&atilde;o &mdash; Guararapes</span><span class="crono-hora">15h30 &ndash; 17h30</span></div>
       <div class="crono-item etilo"><span class="crono-seq">Etil&ocirc;metro</span><span class="crono-label">Ativo e Passivo durante o bloqueio</span><span class="crono-hora">15h30 &ndash; 17h30</span></div>
-      <div class="crono-item tabul"><span class="crono-seq">Parcial</span><span class="crono-label">Resultado parcial ao CGP</span><span class="crono-hora">At&eacute; 17h40</span></div>
+      <div class="crono-item tabul"><span class="crono-seq">Parcial</span><span class="crono-label">Resultado &mdash; Sala de Op. e Supervisor</span><span class="crono-hora">At&eacute; 17h40</span></div>
+    </div>
+  </div>
+
+  <!-- Comando e Supervisão -->
+  <div class="crono-card">
+    <div class="sh sh-cmd"><span class="icon">&#11088;</span> Comando da Opera&ccedil;&atilde;o</div>
+    <div class="crono-grid">
+      <div class="crono-item cmt"><span class="crono-seq">Cmt 1&ordm; Bloqueio &middot; Dia</span><span class="crono-label">Subten PM Dantas</span><span class="crono-hora crono-cmt">Guararapes</span></div>
+      <div class="crono-item cmt"><span class="crono-seq">Cmt 2&ordm; Bloqueio &middot; Noite</span><span class="crono-label">Subten PM Gleiton</span><span class="crono-hora crono-cmt">Valpara&iacute;so</span></div>
+      <div class="crono-item cmt-sup"><span class="crono-seq">Supervis&atilde;o Geral da Opera&ccedil;&atilde;o</span><span class="crono-label">Cap PM Josemar</span><span class="crono-hora crono-ouro">Cmt da 5&ordf; Cia PM</span></div>
     </div>
   </div>
 
@@ -334,7 +351,7 @@
     <div class="comm-body">
       <div class="comm-row">
         <div class="comm-num">1</div>
-        <div class="comm-text"><strong>Prele&ccedil;&atilde;o (15h00):</strong> alinhar efetivo, local de emprego, procedimentos de abordagem, uso do etil&ocirc;metro e seguran&ccedil;a operacional.</div>
+        <div class="comm-text"><strong>Prele&ccedil;&atilde;o (15h00) &mdash; Cmt: Subten PM Dantas:</strong> refor&ccedil;ar que o <strong>foco total da opera&ccedil;&atilde;o &eacute; a fiscaliza&ccedil;&atilde;o de motocicletas</strong>, com &ecirc;nfase em irregularidades &mdash; especialmente <strong>escapamento irregular</strong>. Orientar sobre abordagem qualificada, seguran&ccedil;a do bloqueio, distribui&ccedil;&atilde;o de fun&ccedil;&otilde;es e uso do etil&ocirc;metro.</div>
       </div>
       <div class="comm-row">
         <div class="comm-num">2</div>
@@ -342,7 +359,7 @@
       </div>
       <div class="comm-row">
         <div class="comm-num">3</div>
-        <div class="comm-text"><strong>Encerramento:</strong> encaminhar resultado parcial ao CGP at&eacute; <span class="comm-deadline">17h40</span>. Dados ser&atilde;o consolidados no Sicoordop n&ordm; 20686013 at&eacute; <span class="comm-deadline">00h00</span>.</div>
+        <div class="comm-text"><strong>Encerramento:</strong> encaminhar resultado parcial &agrave; <strong>Sala de Opera&ccedil;&otilde;es</strong> e ao <strong>Supervisor da Opera&ccedil;&atilde;o, Cap PM Josemar (Cmt 5&ordf; Cia)</strong>, at&eacute; <span class="comm-deadline">17h40</span>. Dados consolidados no Sicoordop n&ordm; 20686013 at&eacute; <span class="comm-deadline">00h00</span>.</div>
       </div>
     </div>
   </div>
@@ -357,11 +374,19 @@
       </div>
       <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">Na prele&ccedil;&atilde;o, refor&ccedil;ar objetivos da OS: fiscaliza&ccedil;&atilde;o de motocicletas, abordagem qualificada, legalidade, t&eacute;cnica policial e seguran&ccedil;a operacional.</div>
+        <div class="check-text">O <strong>Cmt do Bloqueio (Subten PM Dantas)</strong> dever&aacute; prelecionar o efetivo: o <strong>foco total da opera&ccedil;&atilde;o &eacute; a fiscaliza&ccedil;&atilde;o de motocicletas</strong>, com &ecirc;nfase em irregularidades &mdash; especialmente <strong>escapamento irregular</strong>. Orientar sobre abordagem qualificada, legalidade e t&eacute;cnica policial. <span class="tag tag-gold">priorit&aacute;rio</span></div>
+      </div>
+      <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Cmt do Bloqueio (Subten PM Dantas) dever&aacute; garantir a <strong>seguran&ccedil;a do bloqueio</strong> e fazer a <strong>distribui&ccedil;&atilde;o de fun&ccedil;&otilde;es</strong> entre o efetivo antes do in&iacute;cio. <span class="tag tag-gold">priorit&aacute;rio</span></div>
       </div>
       <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
         <div class="check-text">Empregar efetivo no bloqueio em Guararapes &mdash; Pra&ccedil;a Nossa Senhora da Concei&ccedil;&atilde;o &mdash; das <strong>15h30 &agrave;s 17h30</strong>. <span class="tag tag-gold">priorit&aacute;rio</span></div>
+      </div>
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">A <strong>VTR do GP</strong> poder&aacute; ser utilizada como apoio durante o bloqueio.</div>
       </div>
       <div class="check-item urgente" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
@@ -375,17 +400,14 @@
         <div class="check-box"></div>
         <div class="check-text">Priorizar motocicletas em pontos estrat&eacute;gicos, verificando condutores, passageiros, documenta&ccedil;&atilde;o, ve&iacute;culos, produtos de il&iacute;citos e procurados pela Justi&ccedil;a.</div>
       </div>
-      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
-        <div class="check-box"></div>
-        <div class="check-text">Manter atendimento das ocorr&ecirc;ncias ordin&aacute;rias e emergenciais sem preju&iacute;zo da opera&ccedil;&atilde;o.</div>
-      </div>
+
       <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
         <div class="check-text">Comunicar imediatamente ao CGP e ao Comando ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e resultados relevantes. <span class="tag tag-gold">priorit&aacute;rio</span></div>
       </div>
       <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">Encaminhar resultado parcial de Guararapes ao CGP ao t&eacute;rmino do emprego (at&eacute; 17h40).</div>
+        <div class="check-text">Encaminhar resultado parcial &agrave; <strong>Sala de Opera&ccedil;&otilde;es</strong> e ao <strong>Supervisor da Opera&ccedil;&atilde;o, Cap PM Josemar (Cmt 5&ordf; Cia)</strong>, ao t&eacute;rmino do emprego (at&eacute; 17h40).</div>
       </div>
     </div>
   </div>
@@ -520,13 +542,23 @@ Relato do per&iacute;odo:
     </div>
   </div>
 
+  <!-- Comando e Supervisão -->
+  <div class="crono-card">
+    <div class="sh sh-cmd"><span class="icon">&#11088;</span> Comando da Opera&ccedil;&atilde;o</div>
+    <div class="crono-grid">
+      <div class="crono-item cmt"><span class="crono-seq">Cmt 1&ordm; Bloqueio &middot; Dia</span><span class="crono-label">Subten PM Dantas</span><span class="crono-hora crono-cmt">Guararapes</span></div>
+      <div class="crono-item cmt"><span class="crono-seq">Cmt 2&ordm; Bloqueio &middot; Noite</span><span class="crono-label">Subten PM Gleiton</span><span class="crono-hora crono-cmt">Valpara&iacute;so</span></div>
+      <div class="crono-item cmt-sup"><span class="crono-seq">Supervis&atilde;o Geral da Opera&ccedil;&atilde;o</span><span class="crono-label">Cap PM Josemar</span><span class="crono-hora crono-ouro">Cmt da 5&ordf; Cia PM</span></div>
+    </div>
+  </div>
+
   <!-- Fluxo de Comunicação -->
   <div class="comm-card">
     <div class="sh sh-comm"><span class="icon">&#128225;</span> Fluxo de Comunica&ccedil;&atilde;o &mdash; 2&ordm; Bloqueio</div>
     <div class="comm-body">
       <div class="comm-row">
         <div class="comm-num">1</div>
-        <div class="comm-text"><strong>Prele&ccedil;&atilde;o em Valpara&iacute;so (18h30):</strong> alinhar efetivo, local de emprego (Av. Nove de Julho x R. Padre Mauro Eduardo), procedimentos de abordagem, uso do etil&ocirc;metro e seguran&ccedil;a operacional.</div>
+        <div class="comm-text"><strong>Prele&ccedil;&atilde;o em Valpara&iacute;so (18h30) &mdash; Cmt: Subten PM Gleiton:</strong> refor&ccedil;ar que o <strong>foco total da opera&ccedil;&atilde;o &eacute; a fiscaliza&ccedil;&atilde;o de motocicletas</strong>, com &ecirc;nfase em irregularidades &mdash; especialmente <strong>escapamento irregular</strong>. Orientar sobre abordagem qualificada, seguran&ccedil;a do bloqueio, distribui&ccedil;&atilde;o de fun&ccedil;&otilde;es e uso do etil&ocirc;metro.</div>
       </div>
       <div class="comm-row">
         <div class="comm-num">2</div>
@@ -534,7 +566,7 @@ Relato do per&iacute;odo:
       </div>
       <div class="comm-row">
         <div class="comm-num">3</div>
-        <div class="comm-text"><strong>Fechamento:</strong> consolidar resultados de ambos os bloqueios para lan&ccedil;amento no Sicoordop/mapa-for&ccedil;a n&ordm; 20686013 impreterivelmente at&eacute; <span class="comm-deadline">00h00</span>.</div>
+        <div class="comm-text"><strong>Fechamento:</strong> encaminhar resultados &agrave; <strong>Sala de Opera&ccedil;&otilde;es</strong> e ao <strong>Supervisor da Opera&ccedil;&atilde;o, Cap PM Josemar (Cmt 5&ordf; Cia)</strong>. Consolidar no Sicoordop/mapa-for&ccedil;a n&ordm; 20686013 impreterivelmente at&eacute; <span class="comm-deadline">00h00</span>.</div>
       </div>
     </div>
   </div>
@@ -549,11 +581,19 @@ Relato do per&iacute;odo:
       </div>
       <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">Na prele&ccedil;&atilde;o em Valpara&iacute;so, refor&ccedil;ar objetivos da OS: fiscaliza&ccedil;&atilde;o de motocicletas, abordagem qualificada, legalidade, t&eacute;cnica policial e seguran&ccedil;a operacional.</div>
+        <div class="check-text">O <strong>Cmt do Bloqueio (Subten PM Gleiton)</strong> dever&aacute; prelecionar o efetivo em Valpara&iacute;so: o <strong>foco total da opera&ccedil;&atilde;o &eacute; a fiscaliza&ccedil;&atilde;o de motocicletas</strong>, com &ecirc;nfase em irregularidades &mdash; especialmente <strong>escapamento irregular</strong>. Orientar sobre abordagem qualificada, legalidade e t&eacute;cnica policial. <span class="tag tag-gold">priorit&aacute;rio</span></div>
+      </div>
+      <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Cmt do Bloqueio (Subten PM Gleiton) dever&aacute; garantir a <strong>seguran&ccedil;a do bloqueio</strong> e fazer a <strong>distribui&ccedil;&atilde;o de fun&ccedil;&otilde;es</strong> entre o efetivo antes do in&iacute;cio. <span class="tag tag-gold">priorit&aacute;rio</span></div>
       </div>
       <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
         <div class="check-text">Empregar efetivo no bloqueio em Valpara&iacute;so &mdash; Av. Nove de Julho x Rua Padre Mauro Eduardo &mdash; das <strong>19h00 &agrave;s 21h00</strong>. <span class="tag tag-gold">priorit&aacute;rio</span></div>
+      </div>
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">A <strong>VTR do GP</strong> poder&aacute; ser utilizada como apoio durante o bloqueio.</div>
       </div>
       <div class="check-item urgente" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
@@ -567,17 +607,14 @@ Relato do per&iacute;odo:
         <div class="check-box"></div>
         <div class="check-text">Priorizar motocicletas em pontos estrat&eacute;gicos, verificando condutores, passageiros, documenta&ccedil;&atilde;o, ve&iacute;culos, produtos de il&iacute;citos e procurados pela Justi&ccedil;a.</div>
       </div>
-      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
-        <div class="check-box"></div>
-        <div class="check-text">Manter atendimento das ocorr&ecirc;ncias ordin&aacute;rias e emergenciais sem preju&iacute;zo da opera&ccedil;&atilde;o.</div>
-      </div>
+
       <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
         <div class="check-text">Comunicar imediatamente ao CGP e ao Comando ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e resultados relevantes. <span class="tag tag-gold">priorit&aacute;rio</span></div>
       </div>
       <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">Consolidar motocicletas abordadas/recolhidas, AIT, pessoas abordadas/presas, BOPM e demais resultados para lan&ccedil;amento no Sicoordop, mapa-for&ccedil;a n&ordm; 20686013, at&eacute; 00h00.</div>
+        <div class="check-text">Consolidar todos os resultados e encaminhar &agrave; <strong>Sala de Opera&ccedil;&otilde;es</strong> e ao <strong>Supervisor da Opera&ccedil;&atilde;o, Cap PM Josemar (Cmt 5&ordf; Cia)</strong>. Lan&ccedil;ar no Sicoordop, mapa-for&ccedil;a n&ordm; 20686013, at&eacute; 00h00.</div>
       </div>
     </div>
   </div>
