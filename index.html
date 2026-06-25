@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checklist &amp; Mapa For&ccedil;a - Op. Impacto &quot;Baixo Ru&iacute;do&quot; - 26 JUN 2026</title>
-<meta property="og:title" content="Mapa For&ccedil;a - Op. Impacto Baixo Ru&iacute;do - 26 JUN 2026">
-<meta property="og:description" content="Checklist operacional e mapa-for&ccedil;a da 5&ordf; Cia PM para 26 JUN 2026.">
+<title>Op. Impacto &ldquo;Baixo Ru&iacute;do&rdquo; &mdash; 26 JUN 2026</title>
+<meta property="og:title" content="Op. Impacto Baixo Ru&iacute;do &mdash; 26 JUN 2026">
+<meta property="og:description" content="Checklist e Mapa-For&ccedil;a da 5&ordf; Cia PM &mdash; Dois Bloqueios &mdash; 26 JUN 2026.">
 <meta property="og:image" content="preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <style>
@@ -17,6 +17,8 @@
     --verde-lite: #E6F2E8;
     --ouro:       #C8960C;
     --ouro-lite:  #FFF8E1;
+    --vermelho:   #C62828;
+    --vermelho-lite: #FFEBEE;
     --ink:        #1A1E2E;
     --muted:      #5A6278;
     --border:     #D4DCF0;
@@ -32,368 +34,12 @@
     font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
     background: var(--bg);
     color: var(--ink);
-    font-size: 14px;
-    line-height: 1.45;
+    font-size: 15px;
+    line-height: 1.5;
     min-height: 100dvh;
   }
 
-  /* ── HEADER ─────────────────────────── */
-  .header {
-    background: linear-gradient(150deg, #001D52 0%, #002D6E 55%, #003F99 100%);
-    border-bottom: 3px solid var(--ouro);
-    padding: 16px 20px 14px;
-  }
-
-  .header-top {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 10px;
-  }
-
-  .badge {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 38% 38%, #1a3d78, #001640);
-    border: 2px solid var(--ouro);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .badge .b1 { font-size: 9px; font-weight: 900; color: var(--ouro); letter-spacing: 1.2px; }
-  .badge .b2 { font-size: 7px; color: #9bb8dd; margin-top: 1px; letter-spacing: .5px; }
-
-  .header-titles { flex: 1; min-width: 0; }
-  .org-label {
-    font-size: 9px;
-    color: #8fb3d9;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 3px;
-  }
-  .op-name {
-    font-size: 22px;
-    font-weight: 900;
-    color: var(--ouro);
-    letter-spacing: 1.5px;
-    line-height: 1;
-  }
-  .op-sub {
-    font-size: 12px;
-    font-weight: 700;
-    color: #fff;
-    margin-top: 3px;
-  }
-
-  .chips {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .chip {
-    background: rgba(0,0,0,.30);
-    border: 1px solid rgba(200,150,12,.45);
-    border-radius: 5px;
-    padding: 5px 12px;
-    text-align: center;
-  }
-  .chip .cl { font-size: 9px; font-weight: 700; color: var(--ouro); text-transform: uppercase; letter-spacing: .8px; }
-  .chip .cv { font-size: 14px; font-weight: 900; color: #fff; margin-top: 1px; }
-
-  /* ── INFO BAR ───────────────────────── */
-  .info-bar {
-    background: #001D52;
-    border-bottom: 1px solid var(--ouro);
-    padding: 8px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 20px;
-  }
-  .ib-item { display: flex; gap: 6px; align-items: baseline; }
-  .ib-label { font-size: 9px; font-weight: 700; color: var(--ouro); text-transform: uppercase; letter-spacing: .8px; flex-shrink: 0; }
-  .ib-val   { font-size: 11px; color: #d0dff5; font-weight: 500; }
-
-  /* ── MAIN ───────────────────────────── */
-  .main { padding: 16px 16px 24px; display: flex; flex-direction: column; gap: 16px; }
-
-  /* ── SECTION HEADER ─────────────────── */
-  .sh {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-radius: var(--radius) var(--radius) 0 0;
-    padding: 8px 12px;
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: .6px;
-    color: #fff;
-    background: var(--azul);
-  }
-  .sh.verde { background: var(--verde); }
-  .sh .icon { font-size: 14px; }
-  .sh .subloc {
-    margin-left: auto;
-    font-size: 9px;
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: .2px;
-    color: rgba(255,255,255,.7);
-    text-align: right;
-    line-height: 1.3;
-    max-width: 55%;
-  }
-
-  /* ── CRONOGRAMA ─────────────────────── */
-  .crono-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-
-  .crono-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1px;
-    background: var(--border);
-  }
-
-  .crono-item {
-    background: var(--white);
-    padding: 10px 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    border-left: 3px solid var(--azul);
-  }
-  .crono-item.bloqueio    { border-left-color: var(--verde); }
-  .crono-item.aliment     { border-left-color: var(--ouro); }
-  .crono-item.tabul       { border-left-color: #7B1FA2; }
-  .crono-item.estac       { border-left-color: var(--azul); }
-
-  .crono-seq {
-    font-size: 9px;
-    font-weight: 700;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: .5px;
-  }
-  .crono-label { font-size: 12px; font-weight: 700; color: var(--ink); line-height: 1.25; }
-  .crono-hora  { font-size: 12px; font-weight: 600; color: var(--azul-mid); font-variant-numeric: tabular-nums; }
-
-  /* ── TABELA ─────────────────────────── */
-  .turno-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-
-  /* Desktop table */
-  .eft-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12.5px;
-  }
-  .eft-table thead tr { background: var(--azul); color: #fff; }
-  .eft-table.verde thead tr { background: var(--verde); }
-  .eft-table thead th {
-    padding: 8px 10px;
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    font-weight: 700;
-    text-align: left;
-    white-space: nowrap;
-  }
-  .eft-table tbody tr:nth-child(even) { background: var(--azul-lite); }
-  .eft-table tbody tr:nth-child(odd)  { background: var(--white); }
-  .eft-table.verde tbody tr:nth-child(even) { background: var(--verde-lite); }
-  .eft-table tbody td {
-    padding: 8px 10px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: middle;
-  }
-
-  /* Badges */
-  .bm {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 9px;
-    font-weight: 800;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: .4px;
-    white-space: nowrap;
-  }
-  .bm-dejem  { background: var(--verde); }
-  .bm-op     { background: var(--azul-mid); }
-  .bm-delg   { background: #004080; }
-  .bm-apoio  { background: #7B3F00; }
-
-  /* ── OBSERVAÇÕES ────────────────────── */
-  .obs-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-  .sh-obs { background: #5D2E00; }
-
-  .obs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--border);
-  }
-
-  .obs-item {
-    background: var(--white);
-    padding: 12px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    border-left: 3px solid #7B3F00;
-  }
-
-  .obs-item-title {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .obs-turno {
-    font-size: 9px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .6px;
-    color: var(--muted);
-  }
-
-  .obs-equipe {
-    font-size: 12.5px;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.3;
-  }
-
-  .obs-nota {
-    font-size: 11px;
-    color: var(--muted);
-    font-style: italic;
-    line-height: 1.4;
-    border-top: 1px dashed var(--border);
-    padding-top: 6px;
-    margin-top: 2px;
-  }
-
-  @media (max-width: 500px) {
-    .obs-grid { grid-template-columns: 1fr; }
-  }
-
-  .vtr {
-    display: inline-block;
-    background: #E8EDF8;
-    border: 1px solid #B0BDD8;
-    border-radius: 4px;
-    padding: 2px 8px;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--azul);
-    font-family: ui-monospace, monospace;
-    letter-spacing: .5px;
-    white-space: nowrap;
-  }
-
-  .efetivo-nomes { font-size: 12.5px; color: var(--ink); }
-  .sep { color: var(--ouro); font-weight: 700; margin: 0 4px; }
-
-  /* ── CARDS MOBILE (substituem a tabela) ─ */
-  .mobile-rows { display: none; }
-
-  .mrow {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    column-gap: 10px;
-    row-gap: 4px;
-    align-items: center;
-  }
-  .mrow:last-child { border-bottom: none; }
-
-  .mrow-badge { grid-row: 1 / 3; }
-  .mrow-top   { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-  .mrow-horario { font-size: 11px; font-weight: 600; color: var(--azul-mid); }
-  .mrow-nomes { font-size: 12.5px; color: var(--ink); }
-
-  /* ── FOOTER ─────────────────────────── */
-  .footer {
-    background: var(--azul);
-    border-top: 2px solid var(--ouro);
-    padding: 10px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 6px;
-  }
-  .ft { font-size: 10px; color: #8fb3d9; }
-  .ft strong { color: var(--ouro); }
-  .ft-restrito {
-    font-size: 9px;
-    color: #6080a0;
-    text-transform: uppercase;
-    letter-spacing: .8px;
-    background: rgba(0,0,0,.2);
-    padding: 3px 8px;
-    border-radius: 3px;
-    border: 1px solid rgba(200,150,12,.25);
-  }
-
-  /* ── RESPONSIVE ─────────────────────── */
-  @media (max-width: 600px) {
-    body { font-size: 13px; }
-
-    .header { padding: 12px 14px 10px; }
-    .badge  { width: 42px; height: 42px; }
-    .badge .b1 { font-size: 8px; }
-    .op-name { font-size: 18px; }
-    .op-sub  { font-size: 11px; }
-    .chips   { gap: 6px; }
-    .chip    { padding: 4px 10px; }
-
-    .main { padding: 12px 10px 20px; gap: 12px; }
-
-    .sh { flex-wrap: wrap; }
-    .sh .subloc { max-width: 100%; text-align: left; margin-left: 0; margin-top: 2px; width: 100%; }
-
-    .crono-grid { grid-template-columns: 1fr 1fr; }
-
-    /* Esconde tabela, mostra cards */
-    .eft-table { display: none; }
-    .mobile-rows { display: block; }
-
-    .info-bar { padding: 8px 14px; }
-    .footer   { padding: 10px 14px; }
-  }
-
-  @media (max-width: 380px) {
-    .crono-grid { grid-template-columns: 1fr; }
-    .op-name { font-size: 16px; }
-  }
-
-  /* ── TABS / PÁGINAS ─────────────────── */
+  /* ── TABS ───────────────────────────── */
   .tabbar {
     display: flex;
     background: #001436;
@@ -401,7 +47,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 6px rgba(0,0,0,.18);
+    box-shadow: 0 2px 8px rgba(0,0,0,.22);
   }
   .tab-btn {
     flex: 1;
@@ -412,212 +58,343 @@
     font-size: 12px;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: .6px;
-    padding: 13px 10px;
+    letter-spacing: .5px;
+    padding: 14px 8px;
     cursor: pointer;
     border-bottom: 3px solid transparent;
     margin-bottom: -3px;
     transition: color .15s, background .15s;
+    line-height: 1.3;
+    -webkit-tap-highlight-color: transparent;
   }
-  .tab-btn:hover    { color: #fff; background: rgba(255,255,255,.06); }
-  .tab-btn.active   { color: var(--ouro); border-bottom-color: var(--ouro); background: rgba(200,150,12,.08); }
+  .tab-btn:hover  { color: #fff; background: rgba(255,255,255,.06); }
+  .tab-btn.active { color: var(--ouro); border-bottom-color: var(--ouro); background: rgba(200,150,12,.09); }
   .tab-btn:focus-visible { outline: 2px solid var(--ouro); outline-offset: -2px; }
-
   .page { display: none; }
   .page.active { display: block; }
 
-  /* ── FLUXO DE COMUNICAÇÃO (callout) ─── */
-  .comm-card {
-    background: var(--ouro-lite);
-    border: 1px solid #E8C772;
-    border-left: 4px solid var(--ouro);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
+  /* ── HEADER ─────────────────────────── */
+  .header {
+    background: linear-gradient(150deg, #001D52 0%, #002D6E 55%, #003F99 100%);
+    border-bottom: 3px solid var(--ouro);
+    padding: 16px 20px 14px;
   }
-  .sh-comm { background: #8A6400; }
-  .comm-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
-  .comm-row  { display: flex; gap: 10px; align-items: flex-start; }
-  .comm-num {
-    flex-shrink: 0;
-    width: 22px; height: 22px;
+  .header-top { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .badge {
+    width: 52px; height: 52px;
     border-radius: 50%;
-    background: var(--ouro);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 900;
-    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle at 38% 38%, #1a3d78, #001640);
+    border: 2px solid var(--ouro);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    flex-shrink: 0;
   }
-  .comm-text { font-size: 12.5px; color: var(--ink); line-height: 1.55; }
-  .comm-text strong { color: #8A6400; }
-  .comm-deadline {
-    display: inline-block;
-    background: var(--azul);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 800;
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin: 0 2px;
-    white-space: nowrap;
+  .badge .b1 { font-size: 9px; font-weight: 900; color: var(--ouro); letter-spacing: 1.2px; }
+  .badge .b2 { font-size: 7px; color: #9bb8dd; margin-top: 1px; letter-spacing: .5px; }
+  .header-titles { flex: 1; min-width: 0; }
+  .org-label { font-size: 9px; color: #8fb3d9; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .op-name  { font-size: 22px; font-weight: 900; color: var(--ouro); letter-spacing: 1.5px; line-height: 1; }
+  .op-sub   { font-size: 12px; font-weight: 700; color: #fff; margin-top: 3px; }
+  .chips    { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip     { background: rgba(0,0,0,.30); border: 1px solid rgba(200,150,12,.45); border-radius: 5px; padding: 5px 12px; text-align: center; }
+  .chip .cl { font-size: 9px; font-weight: 700; color: var(--ouro); text-transform: uppercase; letter-spacing: .8px; }
+  .chip .cv { font-size: 13px; font-weight: 900; color: #fff; margin-top: 1px; }
+
+  /* ── INFO BAR ───────────────────────── */
+  .info-bar {
+    background: #001D52;
+    border-bottom: 1px solid var(--ouro);
+    padding: 8px 20px;
+    display: flex; flex-wrap: wrap; gap: 5px 20px;
+  }
+  .ib-item  { display: flex; gap: 6px; align-items: baseline; }
+  .ib-label { font-size: 9px; font-weight: 700; color: var(--ouro); text-transform: uppercase; letter-spacing: .8px; flex-shrink: 0; }
+  .ib-val   { font-size: 11px; color: #d0dff5; font-weight: 500; }
+
+  /* ── MAIN ───────────────────────────── */
+  .main { padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 16px; }
+
+  /* ── SECTION HEADER ─────────────────── */
+  .sh {
+    display: flex; align-items: center; gap: 8px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    padding: 10px 14px;
+    font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .6px;
+    color: #fff; background: var(--azul);
+  }
+  .sh.verde   { background: var(--verde); }
+  .sh-obs     { background: #5D2E00; }
+  .sh-comm    { background: #8A6400; }
+  .sh .icon   { font-size: 14px; }
+  .sh .subloc {
+    margin-left: auto; font-size: 9px; font-weight: 500; text-transform: none; letter-spacing: .2px;
+    color: rgba(255,255,255,.75); text-align: right; line-height: 1.3; max-width: 55%;
   }
 
+  /* ── CRONOGRAMA ─────────────────────── */
+  .crono-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); }
+  .crono-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 1px; background: var(--border); }
+  .crono-item { background: var(--white); padding: 12px 13px; display: flex; flex-direction: column; gap: 3px; border-left: 3px solid var(--azul); }
+  .crono-item.bloqueio { border-left-color: var(--verde); }
+  .crono-item.tabul    { border-left-color: #7B1FA2; }
+  .crono-item.etilo    { border-left-color: var(--vermelho); }
+  .crono-item.estac    { border-left-color: var(--azul); }
+  .crono-seq   { font-size: 9px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  .crono-label { font-size: 12px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+  .crono-hora  { font-size: 13px; font-weight: 800; color: var(--azul-mid); font-variant-numeric: tabular-nums; }
+
+  /* ── COMUNICAÇÃO ────────────────────── */
+  .comm-card { background: var(--ouro-lite); border: 1px solid #E8C772; border-left: 4px solid var(--ouro); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .comm-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+  .comm-row  { display: flex; gap: 10px; align-items: flex-start; }
+  .comm-num  { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--ouro); color: #fff; font-size: 13px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+  .comm-text { font-size: 13px; color: var(--ink); line-height: 1.55; }
+  .comm-text strong { color: #8A6400; }
+  .comm-deadline { display: inline-block; background: var(--azul); color: #fff; font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin: 0 2px; white-space: nowrap; }
+
   /* ── CHECKLIST ──────────────────────── */
-  .check-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
+  .check-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); }
   .check-list { display: flex; flex-direction: column; }
   .check-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px 14px;
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 14px 16px;
     border-bottom: 1px solid var(--border);
     cursor: pointer;
-    transition: background .12s;
+    transition: background .1s;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
   }
   .check-item:last-child { border-bottom: none; }
-  .check-item:hover { background: var(--azul-lite); }
+  .check-item:hover  { background: var(--azul-lite); }
+  .check-item:active { background: #ccddf5; }
   .check-item:focus-visible { outline: 2px solid var(--azul-mid); outline-offset: -2px; }
   .check-box {
-    flex-shrink: 0;
-    width: 18px; height: 18px;
-    margin-top: 1px;
-    border: 2px solid var(--azul-mid);
-    border-radius: 4px;
-    position: relative;
-    transition: background .12s, border-color .12s;
+    flex-shrink: 0; width: 22px; height: 22px; margin-top: 1px;
+    border: 2px solid var(--azul-mid); border-radius: 5px; background: #fff;
+    position: relative; transition: background .1s, border-color .1s;
   }
   .check-item.checked .check-box { background: var(--verde); border-color: var(--verde); }
   .check-item.checked .check-box::after {
-    content: "\2713";
-    position: absolute; inset: 0;
+    content: "\2713"; position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center;
-    color: #fff; font-size: 12px; font-weight: 900;
+    color: #fff; font-size: 14px; font-weight: 900;
   }
-  .check-text { font-size: 12.5px; color: var(--ink); line-height: 1.5; }
+  .check-text { font-size: 14px; color: var(--ink); line-height: 1.5; }
   .check-item.checked .check-text { color: var(--muted); text-decoration: line-through; }
-  .check-item.destaque { background: var(--ouro-lite); border-left: 3px solid var(--ouro); padding-left: 11px; }
+
+  .check-item.destaque { background: var(--ouro-lite); border-left: 4px solid var(--ouro); padding-left: 12px; }
   .check-item.destaque .check-box { border-color: #B8860B; }
   .check-item.destaque.checked .check-box { background: #B8860B; border-color: #B8860B; }
-  .check-text .tag {
-    display: inline-block;
-    background: var(--ouro);
-    color: #5D4400;
-    font-size: 9px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    padding: 1px 6px;
-    border-radius: 3px;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
 
-  /* ── MODELO DE RESENHA ──────────────── */
-  .resenha-body { padding: 12px 14px; }
-  .resenha-templates { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .resenha-group { display: flex; flex-direction: column; gap: 8px; }
-  .resenha-label {
-    font-size: 11px;
-    font-weight: 800;
-    color: var(--azul-mid);
-    text-transform: uppercase;
-    letter-spacing: .5px;
-  }
+  .check-item.urgente  { background: var(--vermelho-lite); border-left: 4px solid var(--vermelho); padding-left: 12px; }
+  .check-item.urgente  .check-box { border-color: var(--vermelho); }
+  .check-item.urgente.checked .check-box { background: var(--vermelho); border-color: var(--vermelho); }
+
+  .tag { display: inline-block; font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: .5px; padding: 2px 7px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+  .tag-gold { background: var(--ouro); color: #5D4400; }
+  .tag-red  { background: var(--vermelho); color: #fff; }
+
+  /* ── TABELA FORÇA ───────────────────── */
+  .turno-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); }
+  .eft-table  { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .eft-table thead tr { background: var(--azul); color: #fff; }
+  .eft-table.verde thead tr { background: var(--verde); }
+  .eft-table thead th { padding: 9px 10px; font-size: 9px; text-transform: uppercase; letter-spacing: .5px; font-weight: 700; text-align: left; white-space: nowrap; }
+  .eft-table tbody tr:nth-child(even) { background: var(--azul-lite); }
+  .eft-table tbody tr:nth-child(odd)  { background: var(--white); }
+  .eft-table.verde tbody tr:nth-child(even) { background: var(--verde-lite); }
+  .eft-table tbody td { padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+
+  .bm       { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 9px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: .4px; white-space: nowrap; }
+  .bm-dejem { background: var(--verde); }
+  .bm-op    { background: var(--azul-mid); }
+  .bm-delg  { background: #004080; }
+  .bm-apoio { background: #7B3F00; }
+
+  .op-pill  { display: inline-block; background: var(--azul-lite); color: var(--azul); border: 1px solid #B8C7E6; border-radius: 4px; padding: 2px 7px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .35px; white-space: nowrap; }
+  .efetivo-nomes { font-size: 13px; color: var(--ink); }
+  .sep { color: var(--ouro); font-weight: 700; margin: 0 4px; }
+
+  /* ── MOBILE CARDS ───────────────────── */
+  .mobile-rows { display: none; }
+  .mrow { padding: 12px 14px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 12px; row-gap: 5px; align-items: center; }
+  .mrow:last-child { border-bottom: none; }
+  .mrow-badge   { grid-row: 1 / 3; }
+  .mrow-top     { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .mrow-horario { font-size: 12px; font-weight: 700; color: var(--azul-mid); }
+  .mrow-nomes   { font-size: 13px; color: var(--ink); line-height: 1.45; }
+
+  /* ── RESENHA ────────────────────────── */
+  .resenha-body      { padding: 14px 16px; }
+  .resenha-group     { display: flex; flex-direction: column; gap: 10px; }
+  .resenha-label     { font-size: 12px; font-weight: 800; color: var(--azul-mid); text-transform: uppercase; letter-spacing: .5px; }
   .resenha-box {
-    background: #0B1A35;
-    color: #E8EFF9;
+    background: #0B1A35; color: #E8EFF9;
     font-family: ui-monospace, 'SF Mono', Consolas, monospace;
-    font-size: 11.5px;
-    line-height: 1.7;
-    padding: 12px 14px;
-    border-radius: 5px;
-    white-space: pre-wrap;
-    word-break: break-word;
+    font-size: 12px; line-height: 1.75; padding: 14px 16px;
+    border-radius: 6px; white-space: pre-wrap; word-break: break-word;
   }
-  .resenha-box b { color: var(--ouro); }
   .copy-btn {
-    align-self: flex-start;
-    background: var(--azul-mid);
-    color: #fff;
-    border: none;
-    font-family: inherit;
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    padding: 7px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background .15s;
+    align-self: flex-start; background: var(--azul-mid); color: #fff; border: none;
+    font-family: inherit; font-size: 12px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: .5px; padding: 10px 20px; border-radius: 5px; cursor: pointer;
+    transition: background .15s; -webkit-tap-highlight-color: transparent;
   }
   .copy-btn:hover  { background: var(--azul); }
   .copy-btn.copied { background: var(--verde); }
   .copy-btn:focus-visible { outline: 2px solid var(--ouro); outline-offset: 2px; }
 
-  /* ── NOTA DE REFERÊNCIA ─────────────── */
-  .ref-note {
-    font-size: 10.5px;
-    color: var(--muted);
-    padding: 10px 14px;
-    text-align: center;
-    line-height: 1.6;
-  }
+  /* ── REF NOTE ───────────────────────── */
+  .ref-note { font-size: 11px; color: var(--muted); padding: 12px 16px; text-align: center; line-height: 1.6; }
   .ref-note strong { color: var(--azul-mid); }
 
-  @media (max-width: 700px) {
-    .resenha-templates { grid-template-columns: 1fr; }
-  }
+  /* ── FOOTER ─────────────────────────── */
+  .footer { background: var(--azul); border-top: 2px solid var(--ouro); padding: 10px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px; }
+  .ft { font-size: 10px; color: #8fb3d9; }
+  .ft strong { color: var(--ouro); }
+  .ft-restrito { font-size: 9px; color: #6080a0; text-transform: uppercase; letter-spacing: .8px; background: rgba(0,0,0,.2); padding: 3px 8px; border-radius: 3px; border: 1px solid rgba(200,150,12,.25); }
 
+  /* ── RESPONSIVE ─────────────────────── */
   @media (max-width: 600px) {
-    .tab-btn { font-size: 10.5px; padding: 11px 6px; }
-    .comm-num { width: 20px; height: 20px; font-size: 11px; }
+    body { font-size: 15px; }
+    .header  { padding: 12px 14px 10px; }
+    .badge   { width: 44px; height: 44px; }
+    .op-name { font-size: 19px; }
+    .op-sub  { font-size: 12px; }
+    .chip .cv { font-size: 13px; }
+    .main    { padding: 12px 10px 24px; gap: 12px; }
+    .sh      { flex-wrap: wrap; padding: 10px 12px; }
+    .sh .subloc { max-width: 100%; text-align: left; margin-left: 0; margin-top: 3px; width: 100%; }
+    .crono-grid { grid-template-columns: 1fr 1fr; }
+    .eft-table  { display: none; }
+    .mobile-rows { display: block; }
+    .info-bar { padding: 8px 14px; }
+    .footer   { padding: 10px 14px; }
+    .check-text { font-size: 14px; }
+    .tab-btn    { font-size: 11px; padding: 13px 6px; }
   }
-
-  /* ── IMPRESSÃO ──────────────────────── */
+  @media (max-width: 380px) {
+    .crono-grid { grid-template-columns: 1fr; }
+    .op-name    { font-size: 17px; }
+    .tab-btn    { font-size: 10px; padding: 12px 4px; letter-spacing: .3px; }
+    .main       { padding: 10px 8px 20px; }
+  }
   @media print {
     .tabbar { display: none; }
-    .page { display: block !important; }
-    #page-checklist { page-break-after: always; }
+    .page   { display: block !important; }
+    #page-bloqueio1 { page-break-after: always; }
   }
-
-  .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1px; background: var(--border); }
-  .meta-item { background: var(--white); padding: 12px 14px; border-left: 3px solid var(--azul); }
-  .meta-item strong { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-bottom: 3px; }
-  .meta-item span { font-size: 12.5px; font-weight: 700; color: var(--ink); }
-  .op-pill { display: inline-block; background: var(--azul-lite); color: var(--azul); border: 1px solid #B8C7E6; border-radius: 4px; padding: 2px 7px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .35px; white-space: nowrap; }
-  .source-warning { background: #FFF8E1; border-left: 4px solid var(--ouro); color: #5D4400; padding: 10px 14px; font-size: 11.5px; line-height: 1.45; }
-
 </style>
 </head>
 <body>
-<nav class="tabbar"><button class="tab-btn active" onclick="showPage('page-checklist', this)">&#9989; Checklist - Graduados</button><button class="tab-btn" onclick="showPage('page-mapa', this)">&#128506;&#65039; Mapa For&ccedil;a</button></nav>
-<div class="page active" id="page-checklist">
+
+<nav class="tabbar">
+  <button class="tab-btn active" onclick="showPage('page-bloqueio1',this)">&#9728; 1&ordm; Bloqueio &middot; Dia</button>
+  <button class="tab-btn"        onclick="showPage('page-bloqueio2',this)">&#127769; 2&ordm; Bloqueio &middot; Noite</button>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     1º BLOQUEIO · DIA · GUARARAPES
+═══════════════════════════════════════════════ -->
+<div class="page active" id="page-bloqueio1">
 <header class="header">
-  <div class="header-top"><div class="badge"><span class="b1">PMESP</span><span class="b2">2&ordm; BPM/I</span></div><div class="header-titles"><div class="org-label">Pol&iacute;cia Militar do Estado de S&atilde;o Paulo - 2&ordm; BPM/I - 5&ordf; Cia PM</div><div class="op-name">CHECKLIST</div><div class="op-sub">Graduados de Servi&ccedil;o - Opera&ccedil;&atilde;o Impacto &quot;Baixo Ru&iacute;do&quot;</div></div></div>
-  <div class="chips"><div class="chip"><div class="cl">Data</div><div class="cv">26 JUN 2026</div></div><div class="chip"><div class="cl">Per&iacute;odo da OS</div><div class="cv">15h00 - 00h00</div></div><div class="chip"><div class="cl">Prele&ccedil;&atilde;o</div><div class="cv">Base 5&ordf; Cia</div></div></div>
+  <div class="header-top">
+    <div class="badge"><span class="b1">PMESP</span><span class="b2">2&ordm; BPM/I</span></div>
+    <div class="header-titles">
+      <div class="org-label">Pol&iacute;cia Militar do Estado de S&atilde;o Paulo &mdash; 2&ordm; BPM/I &mdash; 5&ordf; Cia PM</div>
+      <div class="op-name">1&ordm; BLOQUEIO &middot; DIA</div>
+      <div class="op-sub">Op. Impacto &ldquo;Baixo Ru&iacute;do&rdquo; &mdash; Guararapes &mdash; 26 JUN 2026</div>
+    </div>
+  </div>
+  <div class="chips">
+    <div class="chip"><div class="cl">Prele&ccedil;&atilde;o</div><div class="cv">15h00</div></div>
+    <div class="chip"><div class="cl">Bloqueio</div><div class="cv">15h30 &ndash; 17h30</div></div>
+    <div class="chip"><div class="cl">Local</div><div class="cv">Guararapes</div></div>
+  </div>
 </header>
-<div class="info-bar"><div class="ib-item"><span class="ib-label">OS:</span><span class="ib-val">2BPMI-023/500/26 - Opera&ccedil;&atilde;o Impacto &quot;Baixo Ru&iacute;do&quot;</span></div><div class="ib-item"><span class="ib-label">Escala:</span><span class="ib-val">Opera&ccedil;&atilde;o Impacto - Baixo Ru&iacute;do 5&ordf; Cia - 26 JUN 2026</span></div></div>
+<div class="info-bar">
+  <div class="ib-item"><span class="ib-label">OS:</span><span class="ib-val">2BPMI-023/500/26 &mdash; Op. Impacto &ldquo;Baixo Ru&iacute;do&rdquo;</span></div>
+  <div class="ib-item"><span class="ib-label">Local:</span><span class="ib-val">Pra&ccedil;a Nossa Senhora da Concei&ccedil;&atilde;o &mdash; Guararapes</span></div>
+</div>
 <main class="main">
-  <div class="comm-card"><div class="sh sh-comm"><span class="icon">&#128225;</span> Fluxo de Comunica&ccedil;&atilde;o</div><div class="comm-body"><div class="comm-row"><div class="comm-num">1</div><div class="comm-text"><strong>Prele&ccedil;&atilde;o:</strong> alinhar efetivo, locais de emprego, procedimentos de abordagem e medidas de seguran&ccedil;a operacional antes do in&iacute;cio do emprego em Guararapes.</div></div><div class="comm-row"><div class="comm-num">2</div><div class="comm-text"><strong>Durante a opera&ccedil;&atilde;o:</strong> comunicar altera&ccedil;&otilde;es de efetivo, ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e necessidade de apoio ao CGP/Comando.</div></div><div class="comm-row"><div class="comm-num">3</div><div class="comm-text"><strong>Fechamento:</strong> encaminhar resultados parciais de Guararapes at&eacute; <span class="comm-deadline">18h10</span> e consolidado final para Sicoordop/mapa-for&ccedil;a n&ordm; 20686013 at&eacute; <span class="comm-deadline">00h00</span>.</div></div></div></div>
-  <div class="check-card"><div class="sh"><span class="icon">&#9989;</span> Checklist Operacional</div><div class="check-list">
-      <div class="check-item" tabindex="0" onclick="toggleCheck(this)"><div class="check-box"></div><div class="check-text">Conferir a escala nominal e confirmar o efetivo nos hor&aacute;rios de QTR antes da prele&ccedil;&atilde;o.</div></div>
-      <div class="check-item" tabindex="0" onclick="toggleCheck(this)"><div class="check-box"></div><div class="check-text">Na prele&ccedil;&atilde;o, refor&ccedil;ar os objetivos da OS: fiscaliza&ccedil;&atilde;o de motocicletas, abordagem qualificada, legalidade, t&eacute;cnica policial e seguran&ccedil;a operacional.</div></div>
-      <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)"><div class="check-box"></div><div class="check-text">Empregar o refor&ccedil;o em Guararapes das 15h00 &agrave;s 18h00 na Pra&ccedil;a Nossa Senhora da Concei&ccedil;&atilde;o. <span class="tag">priorit&aacute;rio</span></div></div>
-      <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)"><div class="check-box"></div><div class="check-text">A partir das 18h00, direcionar o emprego principal para Valpara&iacute;so, na Avenida Nove de Julho x Rua Padre Mauro Eduardo. <span class="tag">priorit&aacute;rio</span></div></div>
-      <div class="check-item" tabindex="0" onclick="toggleCheck(this)"><div class="check-box"></div><div class="check-text">Priorizar motocicletas em pontos estrat&eacute;gicos, corredores de circula&ccedil;&atilde;o e acessos aos munic&iacute;pios, verificando condutores, passageiros, documenta&ccedil;&atilde;o, ve&iacute;culos produtos de il&iacute;citos e procurados pela Justi&ccedil;a.</div></div>
-      <div class="check-item" tabindex="0" onclick="toggleCheck(this)"><div class="check-box"></div><div class="check-text">Manter atendimento das ocorr&ecirc;ncias ordin&aacute;rias e emergenciais sem preju&iacute;zo da opera&ccedil;&atilde;o.</div></div>
-      <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)"><div class="check-box"></div><div class="check-text">Comunicar imediatamente ao CGP e ao Comando ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e resultados relevantes. <span class="tag">priorit&aacute;rio</span></div></div>
-      <div class="check-item" tabindex="0" onclick="toggleCheck(this)"><div class="check-box"></div><div class="check-text">Consolidar motocicletas abordadas/recolhidas, AIT, pessoas abordadas/presas, BOPM e demais resultados para lan&ccedil;amento no Sicoordop, mapa-for&ccedil;a n&ordm; 20686013, at&eacute; 00h00.</div></div>
-  </div></div>
-  <div class="turno-card"><div class="sh verde"><span class="icon">&#9728;&#65039;</span> Refer&ecirc;ncia R&aacute;pida - Guararapes<span class="subloc">15h00 &agrave;s 18h00 | Pra&ccedil;a Nossa Senhora da Concei&ccedil;&atilde;o</span></div>
+
+  <!-- Cronograma -->
+  <div class="crono-card">
+    <div class="sh"><span class="icon">&#128338;</span> Cronograma &mdash; 1&ordm; Bloqueio</div>
+    <div class="crono-grid">
+      <div class="crono-item estac"><span class="crono-seq">Prele&ccedil;&atilde;o</span><span class="crono-label">Base da 5&ordf; Cia</span><span class="crono-hora">15h00</span></div>
+      <div class="crono-item bloqueio"><span class="crono-seq">Bloqueio</span><span class="crono-label">Pra&ccedil;a N. Sra. da Concei&ccedil;&atilde;o &mdash; Guararapes</span><span class="crono-hora">15h30 &ndash; 17h30</span></div>
+      <div class="crono-item etilo"><span class="crono-seq">Etil&ocirc;metro</span><span class="crono-label">Ativo e Passivo durante o bloqueio</span><span class="crono-hora">15h30 &ndash; 17h30</span></div>
+      <div class="crono-item tabul"><span class="crono-seq">Parcial</span><span class="crono-label">Resultado parcial ao CGP</span><span class="crono-hora">At&eacute; 17h40</span></div>
+    </div>
+  </div>
+
+  <!-- Fluxo de Comunicação -->
+  <div class="comm-card">
+    <div class="sh sh-comm"><span class="icon">&#128225;</span> Fluxo de Comunica&ccedil;&atilde;o &mdash; 1&ordm; Bloqueio</div>
+    <div class="comm-body">
+      <div class="comm-row">
+        <div class="comm-num">1</div>
+        <div class="comm-text"><strong>Prele&ccedil;&atilde;o (15h00):</strong> alinhar efetivo, local de emprego, procedimentos de abordagem, uso do etil&ocirc;metro e seguran&ccedil;a operacional.</div>
+      </div>
+      <div class="comm-row">
+        <div class="comm-num">2</div>
+        <div class="comm-text"><strong>Durante o bloqueio:</strong> comunicar altera&ccedil;&otilde;es de efetivo, ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e necessidade de apoio ao CGP/Comando.</div>
+      </div>
+      <div class="comm-row">
+        <div class="comm-num">3</div>
+        <div class="comm-text"><strong>Encerramento:</strong> encaminhar resultado parcial ao CGP at&eacute; <span class="comm-deadline">17h40</span>. Dados ser&atilde;o consolidados no Sicoordop n&ordm; 20686013 at&eacute; <span class="comm-deadline">00h00</span>.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="check-card">
+    <div class="sh"><span class="icon">&#9989;</span> Checklist &mdash; 1&ordm; Bloqueio (Dia)</div>
+    <div class="check-list">
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Conferir escala nominal e confirmar efetivo antes da prele&ccedil;&atilde;o das 15h00.</div>
+      </div>
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Na prele&ccedil;&atilde;o, refor&ccedil;ar objetivos da OS: fiscaliza&ccedil;&atilde;o de motocicletas, abordagem qualificada, legalidade, t&eacute;cnica policial e seguran&ccedil;a operacional.</div>
+      </div>
+      <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Empregar efetivo no bloqueio em Guararapes &mdash; Pra&ccedil;a Nossa Senhora da Concei&ccedil;&atilde;o &mdash; das <strong>15h30 &agrave;s 17h30</strong>. <span class="tag tag-gold">priorit&aacute;rio</span></div>
+      </div>
+      <div class="check-item urgente" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Realizar <strong>Teste de Etil&ocirc;metro ativo e passivo</strong> durante o bloqueio. Registrar n&uacute;mero de testes realizados. <span class="tag tag-red">obrigat&oacute;rio</span></div>
+      </div>
+      <div class="check-item urgente" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Fazer <strong>registros fotogr&aacute;ficos</strong> antes do in&iacute;cio, durante a opera&ccedil;&atilde;o e ao encerramento do bloqueio. <span class="tag tag-red">obrigat&oacute;rio</span></div>
+      </div>
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Priorizar motocicletas em pontos estrat&eacute;gicos, verificando condutores, passageiros, documenta&ccedil;&atilde;o, ve&iacute;culos, produtos de il&iacute;citos e procurados pela Justi&ccedil;a.</div>
+      </div>
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Manter atendimento das ocorr&ecirc;ncias ordin&aacute;rias e emergenciais sem preju&iacute;zo da opera&ccedil;&atilde;o.</div>
+      </div>
+      <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Comunicar imediatamente ao CGP e ao Comando ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e resultados relevantes. <span class="tag tag-gold">priorit&aacute;rio</span></div>
+      </div>
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Encaminhar resultado parcial de Guararapes ao CGP ao t&eacute;rmino do emprego (at&eacute; 17h40).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mapa Força Guararapes -->
+  <div class="turno-card">
+    <div class="sh verde"><span class="icon">&#9728;</span> Mapa For&ccedil;a &mdash; Guararapes<span class="subloc">Pra&ccedil;a N. Sra. da Concei&ccedil;&atilde;o | 15h30 &agrave;s 17h30</span></div>
     <table class="eft-table verde">
-      <thead><tr><th>Modalidade</th><th>QTR / Hor&aacute;rio</th><th>Local / Emprego</th><th>Efetivo Empregado</th></tr></thead>
+      <thead><tr><th>Modalidade</th><th>QTR / Hor&aacute;rio</th><th>Local</th><th>Efetivo Empregado</th></tr></thead>
       <tbody>
         <tr>
           <td><span class="bm bm-dejem">DEJEM</span></td>
@@ -627,7 +404,7 @@
         </tr>
         <tr>
           <td><span class="bm bm-op">Refor&ccedil;o Adm</span></td>
-          <td>15h00 &agrave;s 18h00</td>
+          <td>15h00 &agrave;s 17h30</td>
           <td><span class="op-pill">Pra&ccedil;a N. Sra. da Concei&ccedil;&atilde;o</span></td>
           <td class="efetivo-nomes">Subten PM Dantas <span class="sep">&bull;</span> 1&ordm; Sgt PM Jhonny <span class="sep">&bull;</span> Cb PM Jurca <span class="sep">&bull;</span> Cb PM Silvana</td>
         </tr>
@@ -647,7 +424,7 @@
       </div>
       <div class="mrow">
         <div class="mrow-badge"><span class="bm bm-op">Refor&ccedil;o Adm</span></div>
-        <div class="mrow-top"><span class="op-pill">Pra&ccedil;a N. Sra. da Concei&ccedil;&atilde;o</span><span class="mrow-horario">15h00 &agrave;s 18h00</span></div>
+        <div class="mrow-top"><span class="op-pill">Pra&ccedil;a N. Sra. da Concei&ccedil;&atilde;o</span><span class="mrow-horario">15h00 &agrave;s 17h30</span></div>
         <div class="mrow-nomes">Subten PM Dantas <span class="sep">&bull;</span> 1&ordm; Sgt PM Jhonny <span class="sep">&bull;</span> Cb PM Jurca <span class="sep">&bull;</span> Cb PM Silvana</div>
       </div>
       <div class="mrow">
@@ -657,61 +434,15 @@
       </div>
     </div>
   </div>
-  <div class="turno-card"><div class="sh"><span class="icon">&#127769;</span> Refer&ecirc;ncia R&aacute;pida - Valpara&iacute;so<span class="subloc">18h00 &agrave;s 00h00 | Av. Nove de Julho x Rua Padre Mauro Eduardo</span></div>
-    <table class="eft-table">
-      <thead><tr><th>Modalidade</th><th>QTR / Hor&aacute;rio</th><th>Local / Emprego</th><th>Efetivo Empregado</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="bm bm-apoio">RP SV2 Valpa</span></td>
-          <td>17h30 &agrave;s 06h00</td>
-          <td><span class="op-pill">Valpara&iacute;so</span></td>
-          <td class="efetivo-nomes">Cb PM Guilherme <span class="sep">&bull;</span> Cb PM Carvalho <span class="sep">&bull;</span> Cb PM Roberto</td>
-        </tr>
-        <tr>
-          <td><span class="bm bm-delg">Delegada 4 Rodas</span></td>
-          <td>18h05 &agrave;s 02h05</td>
-          <td><span class="op-pill">Av. Nove de Julho x R. Padre Mauro Eduardo</span></td>
-          <td class="efetivo-nomes">Cap PM Josemar <span class="sep">&bull;</span> 1&ordm; Sgt PM Breno <span class="sep">&bull;</span> Cb PM Ubirat&atilde; <span class="sep">&bull;</span> Cb PM Dem&eacute;trio</td>
-        </tr>
-        <tr>
-          <td><span class="bm bm-dejem">DEJEM</span></td>
-          <td>18h05 &agrave;s 02h05</td>
-          <td><span class="op-pill">Valpara&iacute;so</span></td>
-          <td class="efetivo-nomes">Subten PM Gleiton <span class="sep">&bull;</span> Cb PM Zanerato <span class="sep">&bull;</span> Cb PM Cristiano <span class="sep">&bull;</span> Cb PM Fernanda</td>
-        </tr>
-        <tr>
-          <td><span class="bm bm-delg">Delegada RPM</span></td>
-          <td>18h05 &agrave;s 02h05</td>
-          <td><span class="op-pill">Valpara&iacute;so</span></td>
-          <td class="efetivo-nomes">Cb PM Trindade <span class="sep">&bull;</span> Cb PM Guedes</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="mobile-rows">
-      <div class="mrow">
-        <div class="mrow-badge"><span class="bm bm-apoio">RP SV2 Valpa</span></div>
-        <div class="mrow-top"><span class="op-pill">Valpara&iacute;so</span><span class="mrow-horario">17h30 &agrave;s 06h00</span></div>
-        <div class="mrow-nomes">Cb PM Guilherme <span class="sep">&bull;</span> Cb PM Carvalho <span class="sep">&bull;</span> Cb PM Roberto</div>
-      </div>
-      <div class="mrow">
-        <div class="mrow-badge"><span class="bm bm-delg">Delegada 4 Rodas</span></div>
-        <div class="mrow-top"><span class="op-pill">Av. Nove de Julho x R. Padre Mauro Eduardo</span><span class="mrow-horario">18h05 &agrave;s 02h05</span></div>
-        <div class="mrow-nomes">Cap PM Josemar <span class="sep">&bull;</span> 1&ordm; Sgt PM Breno <span class="sep">&bull;</span> Cb PM Ubirat&atilde; <span class="sep">&bull;</span> Cb PM Dem&eacute;trio</div>
-      </div>
-      <div class="mrow">
-        <div class="mrow-badge"><span class="bm bm-dejem">DEJEM</span></div>
-        <div class="mrow-top"><span class="op-pill">Valpara&iacute;so</span><span class="mrow-horario">18h05 &agrave;s 02h05</span></div>
-        <div class="mrow-nomes">Subten PM Gleiton <span class="sep">&bull;</span> Cb PM Zanerato <span class="sep">&bull;</span> Cb PM Cristiano <span class="sep">&bull;</span> Cb PM Fernanda</div>
-      </div>
-      <div class="mrow">
-        <div class="mrow-badge"><span class="bm bm-delg">Delegada RPM</span></div>
-        <div class="mrow-top"><span class="op-pill">Valpara&iacute;so</span><span class="mrow-horario">18h05 &agrave;s 02h05</span></div>
-        <div class="mrow-nomes">Cb PM Trindade <span class="sep">&bull;</span> Cb PM Guedes</div>
-      </div>
-    </div>
-  </div>
-  <div class="check-card"><div class="sh sh-obs"><span class="icon">&#128221;</span> Modelos de Resenha</div><div class="resenha-body"><div class="resenha-templates"><div class="resenha-group"><div class="resenha-label">&#9728;&#65039; Guararapes - parcial at&eacute; 18h10</div><div class="resenha-box" id="resenha-guararapes">*RESENHA PARCIAL - OP. IMPACTO &quot;BAIXO RU&Iacute;DO&quot;*
-*5&ordf; Cia PM / 2&ordm; BPM/I - Guararapes - 26 JUN 2026 (15h00-18h00)*
+
+  <!-- Resenha Guararapes -->
+  <div class="check-card">
+    <div class="sh sh-obs"><span class="icon">&#128221;</span> Modelo de Resenha &mdash; Guararapes</div>
+    <div class="resenha-body">
+      <div class="resenha-group">
+        <div class="resenha-label">&#9728; Guararapes &mdash; parcial at&eacute; 17h40</div>
+        <div class="resenha-box" id="resenha-guararapes">*RESENHA PARCIAL - OP. IMPACTO "BAIXO RU&Iacute;DO"*
+*5&ordf; Cia PM / 2&ordm; BPM/I - Guararapes - 26 JUN 2026 (15h30-17h30)*
 *Local: Pra&ccedil;a Nossa Senhora da Concei&ccedil;&atilde;o*
 
 Efetivo empregado:
@@ -719,26 +450,7 @@ Efetivo empregado:
 - Refor&ccedil;o Adm: Subten PM Dantas / 1&ordm; Sgt PM Jhonny / Cb PM Jurca / Cb PM Silvana
 - Apoio CGP-5: Subten PM Teixeira / Cb PM Marcos
 
-- Motocicletas abordadas:
-- Motocicletas recolhidas/apreendidas:
-- AIT lavrados:
-- Pessoas abordadas:
-- Pessoas presas:
-- BOPM(s):
-- Demais resultados relevantes:
-- Ocorr&ecirc;ncias de destaque:
-
-Relato do per&iacute;odo:
-[descrever brevemente o emprego, pontos positivos, dificuldades e altera&ccedil;&otilde;es]</div><button class="copy-btn" onclick="copyResenha('resenha-guararapes', this)">Copiar modelo</button></div><div class="resenha-group"><div class="resenha-label">&#127769; Valpara&iacute;so - final at&eacute; 00h00</div><div class="resenha-box" id="resenha-valparaiso">*RESENHA FINAL - OP. IMPACTO &quot;BAIXO RU&Iacute;DO&quot;*
-*5&ordf; Cia PM / 2&ordm; BPM/I - Valpara&iacute;so - 26 JUN 2026 (18h00-00h00)*
-*Local: Av. Nove de Julho x Rua Padre Mauro Eduardo*
-
-Efetivo empregado:
-- RP SV2 Valpa: Cb PM Guilherme / Cb PM Carvalho / Cb PM Roberto
-- Delegada 4 Rodas: Cap PM Josemar / 1&ordm; Sgt PM Breno / Cb PM Ubirat&atilde; / Cb PM Dem&eacute;trio
-- DEJEM: Subten PM Gleiton / Cb PM Zanerato / Cb PM Cristiano / Cb PM Fernanda
-- Delegada RPM: Cb PM Trindade / Cb PM Guedes
-
+Resultados:
 - Motocicletas abordadas:
 - Motocicletas recolhidas/apreendidas:
 - AIT lavrados:
@@ -746,93 +458,157 @@ Efetivo empregado:
   - embriaguez ao volante:
   - falta/irregularidade de CNH:
   - outras naturezas:
-- Etil&ocirc;metro: passivo ( ) / ativo ( ) - testes realizados:
+- Etil&ocirc;metro: passivo ( ) / ativo ( ) &mdash; testes realizados:
 - Pessoas abordadas:
 - Pessoas presas:
 - BOPM(s):
 - Demais resultados relevantes:
 - Ocorr&ecirc;ncias de destaque:
 
+Registros fotogr&aacute;ficos: antes ( ) / durante ( ) / depois ( )
+
 Relato do per&iacute;odo:
-[descrever brevemente o emprego, pontos positivos, dificuldades e altera&ccedil;&otilde;es]</div><button class="copy-btn" onclick="copyResenha('resenha-valparaiso', this)">Copiar modelo</button></div></div></div></div>
-  <div class="check-card"><div class="ref-note"><strong>Documentos-base:</strong> Escala &quot;Opera&ccedil;&atilde;o Impacto - Baixo Ru&iacute;do 5&ordf; Cia&quot;, 26 JUN 2026, e Ordem de Servi&ccedil;o n&ordm; 2BPMI-023/500/26, de 25 JUN 2026. Per&iacute;odo da OS: 26 JUN 2026, das 15h00 &agrave;s 00h00. Resultados: Sicoordop, mapa-for&ccedil;a n&ordm; 20686013, at&eacute; 00h00.</div></div>
-</main><footer class="footer"><div class="ft"><strong>2&ordm; BPM/I - 5&ordf; Cia PM</strong> &nbsp;|&nbsp; Guararapes / Valpara&iacute;so - SP</div><div class="ft">Documento de uso operacional interno</div><div class="ft-restrito">Uso Restrito</div></footer></div>
-<div class="page" id="page-mapa">
-<header class="header">
-  <div class="header-top"><div class="badge"><span class="b1">PMESP</span><span class="b2">2&ordm; BPM/I</span></div><div class="header-titles"><div class="org-label">Pol&iacute;cia Militar do Estado de S&atilde;o Paulo - 2&ordm; BPM/I - 5&ordf; Cia PM</div><div class="op-name">MAPA FOR&Ccedil;A</div><div class="op-sub">Opera&ccedil;&atilde;o Impacto - &quot;Baixo Ru&iacute;do&quot;</div></div></div>
-  <div class="chips"><div class="chip"><div class="cl">Data</div><div class="cv">26 JUN 2026</div></div><div class="chip"><div class="cl">Per&iacute;odo da OS</div><div class="cv">15h00 - 00h00</div></div><div class="chip"><div class="cl">Prele&ccedil;&atilde;o</div><div class="cv">Base 5&ordf; Cia</div></div></div>
-</header>
-<div class="info-bar"><div class="ib-item"><span class="ib-label">Ordem de Servi&ccedil;o:</span><span class="ib-val">2BPMI-023/500/26</span></div><div class="ib-item"><span class="ib-label">Miss&atilde;o:</span><span class="ib-val">Intensificar a fiscaliza&ccedil;&atilde;o de motocicletas e condutores, com abordagens qualificadas, seguran&ccedil;a operacional e preserva&ccedil;&atilde;o do atendimento emergencial.</span></div></div>
-<main class="main">
-  <div class="crono-card"><div class="sh"><span class="icon">&#128338;</span> Cronograma de Atividades</div><div class="crono-grid"><div class="crono-item estac"><span class="crono-seq">Prele&ccedil;&atilde;o</span><span class="crono-label">Base da 5&ordf; Cia</span><span class="crono-hora">Antes do emprego</span></div><div class="crono-item bloqueio"><span class="crono-seq">1&ordm; Per&iacute;odo</span><span class="crono-label">Guararapes - Pra&ccedil;a Nossa Senhora da Concei&ccedil;&atilde;o</span><span class="crono-hora">15h00 - 18h00</span></div><div class="crono-item bloqueio"><span class="crono-seq">2&ordm; Per&iacute;odo</span><span class="crono-label">Valpara&iacute;so - Av. Nove de Julho x Rua Padre Mauro Eduardo</span><span class="crono-hora">18h00 - 00h00</span></div><div class="crono-item tabul"><span class="crono-seq">Lan&ccedil;amento</span><span class="crono-label">Sicoordop - mapa-for&ccedil;a n&ordm; 20686013</span><span class="crono-hora">At&eacute; 00h00</span></div></div></div>
-  <div class="crono-card"><div class="sh"><span class="icon">&#128204;</span> Dados da Opera&ccedil;&atilde;o</div><div class="meta-grid"><div class="meta-item"><strong>Data</strong><span>26 JUN 2026</span></div><div class="meta-item"><strong>Opera&ccedil;&atilde;o</strong><span>Impacto - Baixo Ru&iacute;do</span></div><div class="meta-item"><strong>Per&iacute;odo da OS</strong><span>15h00 &agrave;s 00h00</span></div><div class="meta-item"><strong>Mapa-for&ccedil;a</strong><span>Sicoordop n&ordm; 20686013</span></div></div><div class="source-warning">OS n&ordm; 2BPMI-023/500/26: fiscaliza&ccedil;&atilde;o de motocicletas e condutores, abordagens qualificadas e emprego em pontos estrat&eacute;gicos. Resultados devem ser consolidados no Sicoordop, mapa-for&ccedil;a n&ordm; 20686013, impreterivelmente at&eacute; 00h00.</div></div>
-  <div class="turno-card"><div class="sh verde"><span class="icon">&#9728;&#65039;</span> Guararapes<span class="subloc">Pra&ccedil;a Nossa Senhora da Concei&ccedil;&atilde;o | 15h00 &agrave;s 18h00</span></div>
-    <table class="eft-table verde">
-      <thead><tr><th>Modalidade</th><th>QTR / Hor&aacute;rio</th><th>Local / Emprego</th><th>Efetivo Empregado</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="bm bm-dejem">DEJEM</span></td>
-          <td>10h00 &agrave;s 18h00</td>
-          <td><span class="op-pill">Guararapes</span></td>
-          <td class="efetivo-nomes">Cb PM Eduardo Dias <span class="sep">&bull;</span> Cb PM Bisson</td>
-        </tr>
-        <tr>
-          <td><span class="bm bm-op">Refor&ccedil;o Adm</span></td>
-          <td>15h00 &agrave;s 18h00</td>
-          <td><span class="op-pill">Pra&ccedil;a N. Sra. da Concei&ccedil;&atilde;o</span></td>
-          <td class="efetivo-nomes">Subten PM Dantas <span class="sep">&bull;</span> 1&ordm; Sgt PM Jhonny <span class="sep">&bull;</span> Cb PM Jurca <span class="sep">&bull;</span> Cb PM Silvana</td>
-        </tr>
-        <tr>
-          <td><span class="bm bm-apoio">CGP-5</span></td>
-          <td>05h30 &agrave;s 18h00</td>
-          <td><span class="op-pill">Apoio / Supervis&atilde;o</span></td>
-          <td class="efetivo-nomes">Subten PM Teixeira <span class="sep">&bull;</span> Cb PM Marcos</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="mobile-rows">
-      <div class="mrow">
-        <div class="mrow-badge"><span class="bm bm-dejem">DEJEM</span></div>
-        <div class="mrow-top"><span class="op-pill">Guararapes</span><span class="mrow-horario">10h00 &agrave;s 18h00</span></div>
-        <div class="mrow-nomes">Cb PM Eduardo Dias <span class="sep">&bull;</span> Cb PM Bisson</div>
-      </div>
-      <div class="mrow">
-        <div class="mrow-badge"><span class="bm bm-op">Refor&ccedil;o Adm</span></div>
-        <div class="mrow-top"><span class="op-pill">Pra&ccedil;a N. Sra. da Concei&ccedil;&atilde;o</span><span class="mrow-horario">15h00 &agrave;s 18h00</span></div>
-        <div class="mrow-nomes">Subten PM Dantas <span class="sep">&bull;</span> 1&ordm; Sgt PM Jhonny <span class="sep">&bull;</span> Cb PM Jurca <span class="sep">&bull;</span> Cb PM Silvana</div>
-      </div>
-      <div class="mrow">
-        <div class="mrow-badge"><span class="bm bm-apoio">CGP-5</span></div>
-        <div class="mrow-top"><span class="op-pill">Apoio / Supervis&atilde;o</span><span class="mrow-horario">05h30 &agrave;s 18h00</span></div>
-        <div class="mrow-nomes">Subten PM Teixeira <span class="sep">&bull;</span> Cb PM Marcos</div>
+[descrever brevemente o emprego, pontos positivos, dificuldades e altera&ccedil;&otilde;es]</div>
+        <button class="copy-btn" onclick="copyResenha('resenha-guararapes',this)">Copiar modelo</button>
       </div>
     </div>
   </div>
-  <div class="turno-card"><div class="sh"><span class="icon">&#127769;</span> Valpara&iacute;so<span class="subloc">Avenida Nove de Julho x Rua Padre Mauro Eduardo | 18h00 &agrave;s 00h00</span></div>
+
+  <div class="check-card"><div class="ref-note"><strong>Documentos-base:</strong> OS n&ordm; 2BPMI-023/500/26, de 25 JUN 2026. Per&iacute;odo total da OS: 26 JUN 2026, das 15h00 &agrave;s 00h00. Resultados consolidados: Sicoordop, mapa-for&ccedil;a n&ordm; 20686013, at&eacute; 00h00.</div></div>
+
+</main>
+<footer class="footer">
+  <div class="ft"><strong>2&ordm; BPM/I &mdash; 5&ordf; Cia PM</strong> &nbsp;|&nbsp; 1&ordm; Bloqueio &mdash; Guararapes</div>
+  <div class="ft">Documento de uso operacional interno</div>
+  <div class="ft-restrito">Uso Restrito</div>
+</footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     2º BLOQUEIO · NOITE · VALPARAÍSO
+═══════════════════════════════════════════════ -->
+<div class="page" id="page-bloqueio2">
+<header class="header">
+  <div class="header-top">
+    <div class="badge"><span class="b1">PMESP</span><span class="b2">2&ordm; BPM/I</span></div>
+    <div class="header-titles">
+      <div class="org-label">Pol&iacute;cia Militar do Estado de S&atilde;o Paulo &mdash; 2&ordm; BPM/I &mdash; 5&ordf; Cia PM</div>
+      <div class="op-name">2&ordm; BLOQUEIO &middot; NOITE</div>
+      <div class="op-sub">Op. Impacto &ldquo;Baixo Ru&iacute;do&rdquo; &mdash; Valpara&iacute;so &mdash; 26 JUN 2026</div>
+    </div>
+  </div>
+  <div class="chips">
+    <div class="chip"><div class="cl">Prele&ccedil;&atilde;o</div><div class="cv">18h30 Valpa</div></div>
+    <div class="chip"><div class="cl">Bloqueio</div><div class="cv">19h00 &ndash; 21h00</div></div>
+    <div class="chip"><div class="cl">Local</div><div class="cv">Valpara&iacute;so</div></div>
+  </div>
+</header>
+<div class="info-bar">
+  <div class="ib-item"><span class="ib-label">OS:</span><span class="ib-val">2BPMI-023/500/26 &mdash; Op. Impacto &ldquo;Baixo Ru&iacute;do&rdquo;</span></div>
+  <div class="ib-item"><span class="ib-label">Local:</span><span class="ib-val">Av. Nove de Julho x Rua Padre Mauro Eduardo &mdash; Valpara&iacute;so</span></div>
+</div>
+<main class="main">
+
+  <!-- Cronograma -->
+  <div class="crono-card">
+    <div class="sh"><span class="icon">&#128338;</span> Cronograma &mdash; 2&ordm; Bloqueio</div>
+    <div class="crono-grid">
+      <div class="crono-item estac"><span class="crono-seq">Prele&ccedil;&atilde;o</span><span class="crono-label">Valpara&iacute;so &mdash; local do bloqueio</span><span class="crono-hora">18h30</span></div>
+      <div class="crono-item bloqueio"><span class="crono-seq">Bloqueio</span><span class="crono-label">Av. Nove de Julho x R. Padre Mauro Eduardo</span><span class="crono-hora">19h00 &ndash; 21h00</span></div>
+      <div class="crono-item etilo"><span class="crono-seq">Etil&ocirc;metro</span><span class="crono-label">Ativo e Passivo durante o bloqueio</span><span class="crono-hora">19h00 &ndash; 21h00</span></div>
+      <div class="crono-item tabul"><span class="crono-seq">Lan&ccedil;amento</span><span class="crono-label">Sicoordop &mdash; mapa-for&ccedil;a n&ordm; 20686013</span><span class="crono-hora">At&eacute; 00h00</span></div>
+    </div>
+  </div>
+
+  <!-- Fluxo de Comunicação -->
+  <div class="comm-card">
+    <div class="sh sh-comm"><span class="icon">&#128225;</span> Fluxo de Comunica&ccedil;&atilde;o &mdash; 2&ordm; Bloqueio</div>
+    <div class="comm-body">
+      <div class="comm-row">
+        <div class="comm-num">1</div>
+        <div class="comm-text"><strong>Prele&ccedil;&atilde;o em Valpara&iacute;so (18h30):</strong> alinhar efetivo, local de emprego (Av. Nove de Julho x R. Padre Mauro Eduardo), procedimentos de abordagem, uso do etil&ocirc;metro e seguran&ccedil;a operacional.</div>
+      </div>
+      <div class="comm-row">
+        <div class="comm-num">2</div>
+        <div class="comm-text"><strong>Durante o bloqueio:</strong> comunicar altera&ccedil;&otilde;es de efetivo, ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e necessidade de apoio ao CGP/Comando.</div>
+      </div>
+      <div class="comm-row">
+        <div class="comm-num">3</div>
+        <div class="comm-text"><strong>Fechamento:</strong> consolidar resultados de ambos os bloqueios para lan&ccedil;amento no Sicoordop/mapa-for&ccedil;a n&ordm; 20686013 impreterivelmente at&eacute; <span class="comm-deadline">00h00</span>.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="check-card">
+    <div class="sh"><span class="icon">&#9989;</span> Checklist &mdash; 2&ordm; Bloqueio (Noite)</div>
+    <div class="check-list">
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Conferir escala nominal e confirmar efetivo antes da prele&ccedil;&atilde;o em Valpara&iacute;so das 18h30.</div>
+      </div>
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Na prele&ccedil;&atilde;o em Valpara&iacute;so, refor&ccedil;ar objetivos da OS: fiscaliza&ccedil;&atilde;o de motocicletas, abordagem qualificada, legalidade, t&eacute;cnica policial e seguran&ccedil;a operacional.</div>
+      </div>
+      <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Empregar efetivo no bloqueio em Valpara&iacute;so &mdash; Av. Nove de Julho x Rua Padre Mauro Eduardo &mdash; das <strong>19h00 &agrave;s 21h00</strong>. <span class="tag tag-gold">priorit&aacute;rio</span></div>
+      </div>
+      <div class="check-item urgente" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Realizar <strong>Teste de Etil&ocirc;metro ativo e passivo</strong> durante o bloqueio. Registrar n&uacute;mero de testes realizados. <span class="tag tag-red">obrigat&oacute;rio</span></div>
+      </div>
+      <div class="check-item urgente" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Fazer <strong>registros fotogr&aacute;ficos</strong> antes do in&iacute;cio, durante a opera&ccedil;&atilde;o e ao encerramento do bloqueio. <span class="tag tag-red">obrigat&oacute;rio</span></div>
+      </div>
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Priorizar motocicletas em pontos estrat&eacute;gicos, verificando condutores, passageiros, documenta&ccedil;&atilde;o, ve&iacute;culos, produtos de il&iacute;citos e procurados pela Justi&ccedil;a.</div>
+      </div>
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Manter atendimento das ocorr&ecirc;ncias ordin&aacute;rias e emergenciais sem preju&iacute;zo da opera&ccedil;&atilde;o.</div>
+      </div>
+      <div class="check-item destaque" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Comunicar imediatamente ao CGP e ao Comando ocorr&ecirc;ncias de destaque, pris&otilde;es, apreens&otilde;es e resultados relevantes. <span class="tag tag-gold">priorit&aacute;rio</span></div>
+      </div>
+      <div class="check-item" tabindex="0" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Consolidar motocicletas abordadas/recolhidas, AIT, pessoas abordadas/presas, BOPM e demais resultados para lan&ccedil;amento no Sicoordop, mapa-for&ccedil;a n&ordm; 20686013, at&eacute; 00h00.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mapa Força Valparaíso -->
+  <div class="turno-card">
+    <div class="sh"><span class="icon">&#127769;</span> Mapa For&ccedil;a &mdash; Valpara&iacute;so<span class="subloc">Av. Nove de Julho x R. Padre Mauro Eduardo | 19h00 &agrave;s 21h00</span></div>
     <table class="eft-table">
-      <thead><tr><th>Modalidade</th><th>QTR / Hor&aacute;rio</th><th>Local / Emprego</th><th>Efetivo Empregado</th></tr></thead>
+      <thead><tr><th>Modalidade</th><th>QTR / Hor&aacute;rio</th><th>Local</th><th>Efetivo Empregado</th></tr></thead>
       <tbody>
         <tr>
           <td><span class="bm bm-apoio">RP SV2 Valpa</span></td>
-          <td>17h30 &agrave;s 06h00</td>
+          <td>17h30 &agrave;s 21h00</td>
           <td><span class="op-pill">Valpara&iacute;so</span></td>
           <td class="efetivo-nomes">Cb PM Guilherme <span class="sep">&bull;</span> Cb PM Carvalho <span class="sep">&bull;</span> Cb PM Roberto</td>
         </tr>
         <tr>
           <td><span class="bm bm-delg">Delegada 4 Rodas</span></td>
-          <td>18h05 &agrave;s 02h05</td>
-          <td><span class="op-pill">Av. Nove de Julho x R. Padre Mauro Eduardo</span></td>
+          <td>18h30 &agrave;s 21h00</td>
+          <td><span class="op-pill">Av. Nove de Julho x R. P. Mauro Eduardo</span></td>
           <td class="efetivo-nomes">Cap PM Josemar <span class="sep">&bull;</span> 1&ordm; Sgt PM Breno <span class="sep">&bull;</span> Cb PM Ubirat&atilde; <span class="sep">&bull;</span> Cb PM Dem&eacute;trio</td>
         </tr>
         <tr>
           <td><span class="bm bm-dejem">DEJEM</span></td>
-          <td>18h05 &agrave;s 02h05</td>
+          <td>18h00 &agrave;s 21h00</td>
           <td><span class="op-pill">Valpara&iacute;so</span></td>
-          <td class="efetivo-nomes">Subten PM Gleiton <span class="sep">&bull;</span> Cb PM Zanerato <span class="sep">&bull;</span> Cb PM Cristiano <span class="sep">&bull;</span> Cb PM Fernanda</td>
+          <td class="efetivo-nomes">Subten PM Gleiton <span class="sep">&bull;</span> Cb PM Zanerato <span class="sep">&bull;</span> Cb PM Cristiano <span class="sep">&bull;</span> Cb PM Fernanda <span class="sep">&bull;</span> Cb PM Tinen</td>
         </tr>
         <tr>
           <td><span class="bm bm-delg">Delegada RPM</span></td>
-          <td>18h05 &agrave;s 02h05</td>
+          <td>18h30 &agrave;s 21h00</td>
           <td><span class="op-pill">Valpara&iacute;so</span></td>
           <td class="efetivo-nomes">Cb PM Trindade <span class="sep">&bull;</span> Cb PM Guedes</td>
         </tr>
@@ -841,33 +617,82 @@ Relato do per&iacute;odo:
     <div class="mobile-rows">
       <div class="mrow">
         <div class="mrow-badge"><span class="bm bm-apoio">RP SV2 Valpa</span></div>
-        <div class="mrow-top"><span class="op-pill">Valpara&iacute;so</span><span class="mrow-horario">17h30 &agrave;s 06h00</span></div>
+        <div class="mrow-top"><span class="op-pill">Valpara&iacute;so</span><span class="mrow-horario">17h30 &agrave;s 21h00</span></div>
         <div class="mrow-nomes">Cb PM Guilherme <span class="sep">&bull;</span> Cb PM Carvalho <span class="sep">&bull;</span> Cb PM Roberto</div>
       </div>
       <div class="mrow">
         <div class="mrow-badge"><span class="bm bm-delg">Delegada 4 Rodas</span></div>
-        <div class="mrow-top"><span class="op-pill">Av. Nove de Julho x R. Padre Mauro Eduardo</span><span class="mrow-horario">18h05 &agrave;s 02h05</span></div>
+        <div class="mrow-top"><span class="op-pill">Av. Nove de Julho x R. P. Mauro Eduardo</span><span class="mrow-horario">18h30 &agrave;s 21h00</span></div>
         <div class="mrow-nomes">Cap PM Josemar <span class="sep">&bull;</span> 1&ordm; Sgt PM Breno <span class="sep">&bull;</span> Cb PM Ubirat&atilde; <span class="sep">&bull;</span> Cb PM Dem&eacute;trio</div>
       </div>
       <div class="mrow">
         <div class="mrow-badge"><span class="bm bm-dejem">DEJEM</span></div>
-        <div class="mrow-top"><span class="op-pill">Valpara&iacute;so</span><span class="mrow-horario">18h05 &agrave;s 02h05</span></div>
-        <div class="mrow-nomes">Subten PM Gleiton <span class="sep">&bull;</span> Cb PM Zanerato <span class="sep">&bull;</span> Cb PM Cristiano <span class="sep">&bull;</span> Cb PM Fernanda</div>
+        <div class="mrow-top"><span class="op-pill">Valpara&iacute;so</span><span class="mrow-horario">18h00 &agrave;s 21h00</span></div>
+        <div class="mrow-nomes">Subten PM Gleiton <span class="sep">&bull;</span> Cb PM Zanerato <span class="sep">&bull;</span> Cb PM Cristiano <span class="sep">&bull;</span> Cb PM Fernanda <span class="sep">&bull;</span> Cb PM Tinen</div>
       </div>
       <div class="mrow">
         <div class="mrow-badge"><span class="bm bm-delg">Delegada RPM</span></div>
-        <div class="mrow-top"><span class="op-pill">Valpara&iacute;so</span><span class="mrow-horario">18h05 &agrave;s 02h05</span></div>
+        <div class="mrow-top"><span class="op-pill">Valpara&iacute;so</span><span class="mrow-horario">18h30 &agrave;s 21h00</span></div>
         <div class="mrow-nomes">Cb PM Trindade <span class="sep">&bull;</span> Cb PM Guedes</div>
       </div>
     </div>
   </div>
-  <div class="obs-card"><div class="sh sh-obs"><span class="icon">&#128203;</span> Observa&ccedil;&otilde;es Operacionais</div><div class="obs-grid"><div class="obs-item"><div class="obs-item-title"><span class="bm bm-op">Guararapes</span><span class="obs-turno">15h00 &agrave;s 18h00</span></div><div class="obs-equipe">Emprego de refor&ccedil;o administrativo e apoio CGP-5</div><div class="obs-nota">Local definido na escala: Pra&ccedil;a Nossa Senhora da Concei&ccedil;&atilde;o. Encaminhar parcial ao final do emprego.</div></div><div class="obs-item"><div class="obs-item-title"><span class="bm bm-delg">Valpara&iacute;so</span><span class="obs-turno">18h00 &agrave;s 00h00</span></div><div class="obs-equipe">Emprego principal noturno</div><div class="obs-nota">Local definido na escala: Avenida Nove de Julho x Rua Padre Mauro Eduardo. Consolidar resultados para lan&ccedil;amento at&eacute; 00h00.</div></div></div></div>
-</main><footer class="footer"><div class="ft"><strong>2&ordm; BPM/I - 5&ordf; Cia PM</strong> &nbsp;|&nbsp; Guararapes / Valpara&iacute;so - SP</div><div class="ft">Documento de uso operacional interno</div><div class="ft-restrito">Uso Restrito</div></footer></div>
+
+  <!-- Resenha Valparaíso -->
+  <div class="check-card">
+    <div class="sh sh-obs"><span class="icon">&#128221;</span> Modelo de Resenha &mdash; Valpara&iacute;so</div>
+    <div class="resenha-body">
+      <div class="resenha-group">
+        <div class="resenha-label">&#127769; Valpara&iacute;so &mdash; final at&eacute; 00h00</div>
+        <div class="resenha-box" id="resenha-valparaiso">*RESENHA FINAL - OP. IMPACTO "BAIXO RU&Iacute;DO"*
+*5&ordf; Cia PM / 2&ordm; BPM/I - Valpara&iacute;so - 26 JUN 2026 (19h00-21h00)*
+*Local: Av. Nove de Julho x Rua Padre Mauro Eduardo*
+
+Efetivo empregado:
+- RP SV2 Valpa: Cb PM Guilherme / Cb PM Carvalho / Cb PM Roberto
+- Delegada 4 Rodas: Cap PM Josemar / 1&ordm; Sgt PM Breno / Cb PM Ubirat&atilde; / Cb PM Dem&eacute;trio
+- DEJEM: Subten PM Gleiton / Cb PM Zanerato / Cb PM Cristiano / Cb PM Fernanda / Cb PM Tinen
+- Delegada RPM: Cb PM Trindade / Cb PM Guedes
+
+Resultados:
+- Motocicletas abordadas:
+- Motocicletas recolhidas/apreendidas:
+- AIT lavrados:
+  - escapamento irregular:
+  - embriaguez ao volante:
+  - falta/irregularidade de CNH:
+  - outras naturezas:
+- Etil&ocirc;metro: passivo ( ) / ativo ( ) &mdash; testes realizados:
+- Pessoas abordadas:
+- Pessoas presas:
+- BOPM(s):
+- Demais resultados relevantes:
+- Ocorr&ecirc;ncias de destaque:
+
+Registros fotogr&aacute;ficos: antes ( ) / durante ( ) / depois ( )
+
+Relato do per&iacute;odo:
+[descrever brevemente o emprego, pontos positivos, dificuldades e altera&ccedil;&otilde;es]</div>
+        <button class="copy-btn" onclick="copyResenha('resenha-valparaiso',this)">Copiar modelo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="check-card"><div class="ref-note"><strong>Documentos-base:</strong> OS n&ordm; 2BPMI-023/500/26, de 25 JUN 2026. Per&iacute;odo total da OS: 26 JUN 2026, das 15h00 &agrave;s 00h00. Resultados consolidados: Sicoordop, mapa-for&ccedil;a n&ordm; 20686013, at&eacute; 00h00.</div></div>
+
+</main>
+<footer class="footer">
+  <div class="ft"><strong>2&ordm; BPM/I &mdash; 5&ordf; Cia PM</strong> &nbsp;|&nbsp; 2&ordm; Bloqueio &mdash; Valpara&iacute;so</div>
+  <div class="ft">Documento de uso operacional interno</div>
+  <div class="ft-restrito">Uso Restrito</div>
+</footer>
+</div>
+
 <script>
 function showPage(pageId, btn) {
-  document.querySelectorAll('.page').forEach(function (p) { p.classList.remove('active'); });
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
   document.getElementById(pageId).classList.add('active');
-  document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
   window.scrollTo(0, 0);
 }
@@ -875,14 +700,20 @@ function toggleCheck(el) { el.classList.toggle('checked'); }
 function copyResenha(id, btn) {
   var text = document.getElementById(id).innerText;
   var original = btn.textContent;
-  function done() { btn.textContent = 'Copiado! ✓'; btn.classList.add('copied'); setTimeout(function () { btn.textContent = original; btn.classList.remove('copied'); }, 1800); }
-  if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done).catch(function () { fallbackCopy(text, done); }); } else { fallbackCopy(text, done); }
+  function done() { btn.textContent = 'Copiado! ✓'; btn.classList.add('copied'); setTimeout(function(){ btn.textContent = original; btn.classList.remove('copied'); }, 1800); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+  } else { fallbackCopy(text, done); }
 }
 function fallbackCopy(text, done) {
-  var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(ta); done();
+  var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta); done();
 }
-document.addEventListener('keydown', function (e) {
-  if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('check-item')) { e.preventDefault(); e.target.classList.toggle('checked'); }
+document.addEventListener('keydown', function(e){
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('check-item')) {
+    e.preventDefault(); e.target.classList.toggle('checked');
+  }
 });
 </script>
 </body>
