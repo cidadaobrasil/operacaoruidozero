@@ -161,6 +161,7 @@
   /* ── CRONOGRAMA ───────────────────── */
   .crono-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); }
   .crono-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 1px; background: var(--border); }
+  .crono-grid-5 { grid-template-columns: repeat(5, 1fr); }
   .crono-item {
     background: var(--white); padding: 14px 14px 13px;
     display: flex; flex-direction: column; gap: 3px;
@@ -447,7 +448,7 @@
   <!-- Cronograma + Comando -->
   <div class="crono-card">
     <div class="sh sh-cmd"><span class="icon">&#11088;</span> Cronograma &mdash; 1&ordm; Bloqueio</div>
-    <div class="crono-grid">
+    <div class="crono-grid crono-grid-5">
       <div class="crono-item estac"><span class="crono-seq">Prele&ccedil;&atilde;o</span><span class="crono-label">Base da 5&ordf; Cia</span><span class="crono-hora">15h00</span></div>
       <div class="crono-item bloqueio"><span class="crono-seq">Bloqueio</span><span class="crono-label">Pra&ccedil;a N. Sra. da Concei&ccedil;&atilde;o &mdash; Guararapes</span><span class="crono-hora">15h30 &ndash; 17h30</span></div>
       <div class="crono-item tabul"><span class="crono-seq">Encaminhamento do Resultado</span><span class="crono-label">Encaminhar &agrave; Sala de Op. e ao Supervisor</span><span class="crono-hora">At&eacute; 17h40</span></div>
@@ -659,7 +660,7 @@ Relato do per&iacute;odo:
   <!-- Cronograma + Comando -->
   <div class="crono-card">
     <div class="sh sh-cmd"><span class="icon">&#11088;</span> Cronograma &mdash; 2&ordm; Bloqueio</div>
-    <div class="crono-grid">
+    <div class="crono-grid crono-grid-5">
       <div class="crono-item estac"><span class="crono-seq">Prele&ccedil;&atilde;o</span><span class="crono-label">Valpara&iacute;so &mdash; local do bloqueio</span><span class="crono-hora">18h30</span></div>
       <div class="crono-item bloqueio"><span class="crono-seq">Bloqueio</span><span class="crono-label">Av. Nove de Julho x R. Padre Mauro Eduardo</span><span class="crono-hora">19h00 &ndash; 21h00</span></div>
       <div class="crono-item tabul"><span class="crono-seq">Encaminhamento do Resultado</span><span class="crono-label">Sicoordop &mdash; mapa-for&ccedil;a n&ordm; 20686013</span><span class="crono-hora">At&eacute; 00h00</span></div>
