@@ -415,10 +415,37 @@
   .crono-hora.crono-cmt  { color: #6B21A8; }
   .crono-hora.crono-ouro { color: #7A4800; font-weight: 900; }
 
+  /* ── PDF EXPORT BUTTON ────────────── */
+  .pdf-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: transparent;
+    border: 1px solid rgba(212,144,10,.45);
+    color: var(--ouro);
+    font-family: inherit; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .7px;
+    padding: 6px 14px; border-radius: 5px;
+    cursor: pointer;
+    transition: background .15s, border-color .15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .pdf-btn:hover  { background: rgba(212,144,10,.12); border-color: var(--ouro); }
+  .pdf-btn:active { background: rgba(212,144,10,.22); }
+  .pdf-btn svg { flex-shrink: 0; }
+
+  /* ── PRINT ────────────────────────── */
   @media print {
-    .tabbar { display: none; }
-    .page   { display: block !important; }
-    #page-bloqueio1 { page-break-after: always; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: #fff !important; }
+    .site-frame { box-shadow: none !important; max-width: 100% !important; }
+    .tabbar, .pdf-btn, .tab-btn { display: none !important; }
+    .page   { display: none !important; }
+    .page.print-target { display: block !important; }
+    .header { -webkit-print-color-adjust: exact; }
+    .check-item { break-inside: avoid; }
+    .crono-card, .comm-card, .check-card, .turno-card { break-inside: avoid; margin-bottom: 12px; }
+    .main { padding: 12px 16px 24px; }
+    .mobile-rows { display: none !important; }
+    .eft-table   { display: table !important; }
   }
 </style>
 </head>
@@ -638,6 +665,10 @@ Relato do per&iacute;odo:
 <footer class="footer">
   <div class="ft"><strong>2&ordm; BPM/I &mdash; 5&ordf; Cia PM</strong> &nbsp;|&nbsp; 1&ordm; Bloqueio &mdash; Guararapes</div>
   <div class="ft">Documento de uso operacional interno</div>
+  <button class="pdf-btn" onclick="exportPDF('page-bloqueio1')">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+    Exportar PDF
+  </button>
   <div class="ft-restrito">Uso Restrito</div>
 </footer>
 </div>
@@ -862,11 +893,25 @@ Relato do per&iacute;odo:
 <footer class="footer">
   <div class="ft"><strong>2&ordm; BPM/I &mdash; 5&ordf; Cia PM</strong> &nbsp;|&nbsp; 2&ordm; Bloqueio &mdash; Valpara&iacute;so</div>
   <div class="ft">Documento de uso operacional interno</div>
+  <button class="pdf-btn" onclick="exportPDF('page-bloqueio2')">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+    Exportar PDF
+  </button>
   <div class="ft-restrito">Uso Restrito</div>
 </footer>
 </div>
 
 <script>
+function exportPDF(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('print-target'));
+  document.getElementById(pageId).classList.add('print-target');
+  window.print();
+  window.addEventListener('afterprint', function cleanup() {
+    document.getElementById(pageId).classList.remove('print-target');
+    window.removeEventListener('afterprint', cleanup);
+  });
+}
+
 function showPage(pageId, btn) {
   document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
   document.getElementById(pageId).classList.add('active');
