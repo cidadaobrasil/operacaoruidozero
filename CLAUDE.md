@@ -14,3 +14,6 @@ Painel HTML estático de operação da 5ª Cia PM (Operação Impacto "Baixo Ru�
 
 ## Cuidado com encoding
 O HTML usa entidades (`&ccedil;` etc.) em alguns pontos — ao usar Edit, copiar o trecho exato do arquivo (não o texto renderizado).
+
+## Histórico de operações
+Pasta `historico/` guarda um arquivo por operação (`AAAA-MM-DD-resenha.md`) com a resenha final que o Josemar cola depois que a operação encerra. Quando ele colar uma resenha final, criar o arquivo do dia nessa pasta — não sobrescrever o `index.html` com esses dados a menos que ele peça explicitamente.
