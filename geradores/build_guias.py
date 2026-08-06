@@ -42,11 +42,13 @@ BOTTOM_MARGIN = 26
 # Tudo que muda de um guia para o outro esta aqui. O restante do arquivo e
 # identico para todos: mexer no layout uma vez vale para os quatro.
 #
-# Atencao ao campo "mediacao": Guararapes e sede do NUMEC, entao o texto dele
-# nao tem a ressalva "Embora o fato tenha ocorrido em...". Bento de Abreu usa a
-# mesma frase de Guararapes mesmo nao sendo sede; isso vem dos scripts
-# originais e foi preservado de proposito, para a refatoracao nao mudar o PDF.
-# Se for para corrigir, e decisao de conteudo, nao de codigo.
+# Atencao ao campo "mediacao": o NUMEC tem sede em Guararapes, entao so o guia
+# de Guararapes nao leva a ressalva "Embora o fato tenha ocorrido em...". Os
+# outros tres municipios levam, porque o morador precisa saber que o
+# atendimento fica na cidade vizinha.
+#
+# Bento de Abreu estava com o texto de Guararapes por erro de copia nos scripts
+# originais, corrigido em 06/08/2026 por confirmacao do Josemar.
 # ---------------------------------------------------------------------------
 
 _MEDIACAO_SEDE = (
@@ -125,8 +127,7 @@ MUNICIPIOS = {
         "arquivo": "guia-barulho-casa-vizinha-bento-de-abreu-mobile.pdf",
         "telefone": "(18) 3601-9200",
         "providencias": "Providências administrativas e fiscalização de posturas",
-        # Sem a ressalva "Embora...", igual ao script original. Ver nota acima.
-        "mediacao": _MEDIACAO_SEDE,
+        "mediacao": _mediacao_outra_cidade("Bento de Abreu"),
         "legislacao_resumo": (
             "A <b>Lei Complementar nº 013/2007 (Código de Posturas)</b> proíbe "
             "perturbar o sossego e o bem-estar público ou da vizinhança com "

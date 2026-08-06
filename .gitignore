@@ -1,1 +1,5 @@
 /24jul/
+
+# Cache do Python, gerado ao importar o build_guias.py em teste
+__pycache__/
+*.pyc

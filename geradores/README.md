@@ -50,15 +50,26 @@ municipais num dicionário.
 A unificação foi verificada gerando os quatro PDFs e comparando com os
 anteriores: **as 16 páginas ficaram idênticas pixel a pixel**.
 
-## Detalhe de conteúdo, não de código
+## Regra do texto de mediação
 
-O texto da mediação comunitária tem duas formas: Guararapes, por ser sede do
-NUMEC, não leva a ressalva "Embora o fato tenha ocorrido em...". **Bento de
-Abreu usa a mesma frase de Guararapes mesmo não sendo sede.** Isso vem dos
-scripts originais e foi preservado de propósito, para a refatoração não alterar
-o PDF. Se estiver errado, é decisão de conteúdo: mude o campo `mediacao`
-daquele município para `_mediacao_outra_cidade("Bento de Abreu")`.
+O NUMEC tem sede em Guararapes. Por isso:
 
-As fontes ainda apontam para `C:\Windows\Fonts`, aceitável porque o material é
+- **Guararapes:** o texto não leva ressalva, porque o atendimento é na própria cidade.
+- **Valparaíso, Rubiácea e Bento de Abreu:** levam a ressalva *"Embora o fato
+  tenha ocorrido em [cidade], os moradores podem solicitar atendimento junto ao
+  NUMEC... sediado em Guararapes"*, para o morador saber que o atendimento fica
+  na cidade vizinha.
+
+Município novo que não seja Guararapes deve usar
+`_mediacao_outra_cidade("Nome da Cidade")`.
+
+**Correção aplicada em 06/08/2026:** Bento de Abreu estava com o texto de
+Guararapes, por erro de cópia nos scripts originais. Corrigido por confirmação
+do Josemar. A mudança afetou só a página 2 daquele guia; o card cresceu uma
+linha para acomodar o texto e o total continuou em 4 páginas.
+
+## Pendência conhecida
+
+As fontes apontam para `C:\Windows\Fonts`, aceitável porque o material é
 produzido em máquina Windows. Se um dia rodar em outro sistema, é o próximo
 ponto a ajustar.
