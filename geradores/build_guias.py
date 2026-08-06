@@ -24,11 +24,122 @@ from reportlab.platypus import (
 # caminho absoluto ("C:\projetos\Sites basicos"), que so funcionava nesta
 # maquina e neste lugar do disco: mover a pasta ou abrir em outro PC quebrava.
 ROOT = Path(__file__).resolve().parent
-OUT = ROOT / "pdf" / "guia-barulho-casa-vizinha-mobile.pdf"
+SAIDA = ROOT / "pdf"
+
+# Municipio corrente. Preenchido por gerar(); o corpo do script le daqui.
+M = None
+OUT = None
 PAGE_W, PAGE_H = 390, 844
 MARGIN_X = 24
 TOP_MARGIN = 28
 BOTTOM_MARGIN = 26
+
+
+
+# ---------------------------------------------------------------------------
+# Os quatro municipios da area da 5a Cia PM.
+#
+# Tudo que muda de um guia para o outro esta aqui. O restante do arquivo e
+# identico para todos: mexer no layout uma vez vale para os quatro.
+#
+# Atencao ao campo "mediacao": Guararapes e sede do NUMEC, entao o texto dele
+# nao tem a ressalva "Embora o fato tenha ocorrido em...". Bento de Abreu usa a
+# mesma frase de Guararapes mesmo nao sendo sede; isso vem dos scripts
+# originais e foi preservado de proposito, para a refatoracao nao mudar o PDF.
+# Se for para corrigir, e decisao de conteudo, nao de codigo.
+# ---------------------------------------------------------------------------
+
+_MEDIACAO_SEDE = (
+    "Antes de judicializar o caso, tente uma solução por meio da <b>mediação "
+    "comunitária</b>. Os moradores podem solicitar atendimento junto ao "
+    "<b>NUMEC (Núcleo de Mediação Comunitária)</b> da 5ª Companhia da Polícia "
+    "Militar, sediado em Guararapes."
+)
+
+
+def _mediacao_outra_cidade(cidade):
+    return (
+        "Antes de judicializar o caso, tente uma solução por meio da <b>mediação "
+        "comunitária</b>. Embora o fato tenha ocorrido em %s, os moradores podem "
+        "solicitar atendimento junto ao <b>NUMEC (Núcleo de Mediação "
+        "Comunitária)</b> da 5ª Companhia da Polícia Militar, sediado em "
+        "Guararapes." % cidade
+    )
+
+
+MUNICIPIOS = {
+    "valparaiso": {
+        "nome": "Valparaíso",
+        "arquivo": "guia-barulho-casa-vizinha-mobile.pdf",
+        "telefone": "(18) 3401-9200",
+        "providencias": "Providências administrativas e fiscalização (GIAF)",
+        "mediacao": _mediacao_outra_cidade("Valparaíso"),
+        "legislacao_resumo": (
+            "A <b>Lei Municipal nº 1.415/1993 (Código de Posturas)</b> proíbe "
+            "expressamente perturbar o sossego público com ruídos ou sons "
+            "excessivos. O <b>Decreto Municipal nº 4.947/2026</b> instituiu o "
+            "<b>Grupo Integrado de Ações Fiscalizatórias (GIAF)</b>, cuja "
+            "prioridade é prevenir e coibir a perturbação do sossego público."
+        ),
+        "legislacao_bullets": [
+            "<b>Lei Municipal nº 1.415/1993</b> (Código de Posturas de Valparaíso/SP) - Proíbe perturbar o sossego público com ruídos ou sons excessivos.",
+            "<b>Decreto Municipal nº 4.947/2026</b> - Institui o Grupo Integrado de Ações Fiscalizatórias (GIAF), voltado à prevenção e ao combate da perturbação do sossego público.",
+        ],
+    },
+    "guararapes": {
+        "nome": "Guararapes",
+        "arquivo": "guia-barulho-casa-vizinha-guararapes-mobile.pdf",
+        "telefone": "(18) 3606-8000",
+        "providencias": "Providências administrativas e fiscalização de posturas",
+        "mediacao": _MEDIACAO_SEDE,
+        "legislacao_resumo": (
+            "A <b>Lei Municipal nº 1.930/1999 (Sons Urbanos)</b> proíbe perturbar "
+            "o sossego e o bem-estar público ou da vizinhança com ruídos, "
+            "algazarras, barulhos e sons excessivos. O <b>Código de Posturas "
+            "(Lei nº 631/1967)</b> também trata de ruídos, diversões e "
+            "funcionamento de estabelecimentos."
+        ),
+        "legislacao_bullets": [
+            "<b>Lei Municipal nº 1.930/1999</b> (Sons Urbanos de Guararapes/SP) - Proíbe perturbar o sossego com ruídos, algazarras, barulhos e sons excessivos.",
+            "<b>Lei Municipal nº 631/1967</b> (Código de Posturas de Guararapes/SP) - Trata de ruídos, diversões, licenças e funcionamento de estabelecimentos.",
+        ],
+    },
+    "rubiacea": {
+        "nome": "Rubiácea",
+        "arquivo": "guia-barulho-casa-vizinha-rubiacea-mobile.pdf",
+        "telefone": "(18) 3697-9117",
+        "providencias": "Providências administrativas e fiscalização municipal",
+        "mediacao": _mediacao_outra_cidade("Rubiácea"),
+        "legislacao_resumo": (
+            "A <b>Lei Municipal nº 1.602/2014</b> regula ruídos urbanos e protege "
+            "o bem-estar e o sossego público em Rubiácea. A norma proíbe ruídos, "
+            "vibrações e sons excessivos ou incômodos que perturbem a coletividade."
+        ),
+        "legislacao_bullets": [
+            "<b>Lei Municipal nº 1.602/2014</b> (Ruídos Urbanos de Rubiácea/SP) - Proíbe ruídos, vibrações e sons excessivos ou incômodos que perturbem o sossego e o bem-estar público.",
+            "<b>Lei Municipal nº 1.878/2022</b> - Proíbe fogos de estampido e artefatos pirotécnicos de efeito sonoro ruidoso no município.",
+        ],
+    },
+    "bento-de-abreu": {
+        "nome": "Bento de Abreu",
+        "arquivo": "guia-barulho-casa-vizinha-bento-de-abreu-mobile.pdf",
+        "telefone": "(18) 3601-9200",
+        "providencias": "Providências administrativas e fiscalização de posturas",
+        # Sem a ressalva "Embora...", igual ao script original. Ver nota acima.
+        "mediacao": _MEDIACAO_SEDE,
+        "legislacao_resumo": (
+            "A <b>Lei Complementar nº 013/2007 (Código de Posturas)</b> proíbe "
+            "perturbar o sossego e o bem-estar público ou da vizinhança com "
+            "ruídos, algazarras, barulhos e sons excessivos. A norma também "
+            "responsabiliza estabelecimentos por tumultos e ruídos na área "
+            "externa adjacente em razão de seu funcionamento."
+        ),
+        "legislacao_bullets": [
+            "<b>Lei Complementar nº 013/2007</b> (Código de Posturas de Bento de Abreu/SP) - Proíbe perturbar o sossego com ruídos, algazarras, barulhos e sons excessivos.",
+            "<b>Lei Municipal nº 1.799/2019</b> - Proíbe fogos de artifício que causem poluição sonora, como estouros e estampidos.",
+        ],
+    },
+}
 
 
 def register_fonts():
@@ -266,7 +377,7 @@ class Hero(Flowable):
         c.roundRect(24, 8, 288, 26, 8, stroke=0, fill=1)
         c.setFillColor(colors.white)
         c.setFont(BOLD, 9.2)
-        c.drawString(40, 18, "Guia elaborado para os moradores de Valparaíso/SP")
+        c.drawString(40, 18, "Guia elaborado para os moradores de %s/SP" % M["nome"])
         c.restoreState()
 
 
@@ -388,9 +499,9 @@ class CompactContactsCard(Flowable):
                 66,
             ),
             (
-                "Prefeitura Municipal de Valparaíso/SP",
-                "(18) 3401-9200",
-                ["Providências administrativas e fiscalização (GIAF)"],
+                "Prefeitura Municipal de %s/SP" % M["nome"],
+                M["telefone"],
+                [M["providencias"]],
                 55,
             ),
             ("Emergência", "190", ["Polícia Militar"], 57),
@@ -450,7 +561,7 @@ def footer(canvas, doc):
     canvas.saveState()
     canvas.setFillColor(colors.HexColor("#AEB7C2"))
     canvas.setFont(FONT, 8)
-    canvas.drawCentredString(PAGE_W / 2, 17, "Guia informativo elaborado para a comunidade de Valparaíso/SP - compartilhe com seus vizinhos.")
+    canvas.drawCentredString(PAGE_W / 2, 17, "Guia informativo elaborado para a comunidade de %s/SP - compartilhe com seus vizinhos." % M["nome"])
     canvas.restoreState()
 
 
@@ -523,7 +634,7 @@ def build():
             PALETTE["blue"],
             "Procure o NUMEC da Polícia Militar",
             [
-                p("Antes de judicializar o caso, tente uma solução por meio da <b>mediação comunitária</b>. Embora o fato tenha ocorrido em Valparaíso, os moradores podem solicitar atendimento junto ao <b>NUMEC (Núcleo de Mediação Comunitária)</b> da 5ª Companhia da Polícia Militar, sediado em Guararapes."),
+                p(M["mediacao"]),
                 p("O NUMEC realiza audiências de mediação entre as partes, buscando uma solução consensual e pacífica para o conflito. A mediação é <b>gratuita, voluntária</b> e costuma resolver muitos conflitos de vizinhança sem necessidade de processo judicial."),
                 callout("<b>5ª Companhia da PM:</b> (18) 3606-1347", PALETTE["blue"]),
                 p("Procurar por: <b>Cb PM Jurca</b> ou <b>Subten PM Marcos</b>"),
@@ -533,11 +644,11 @@ def build():
         SectionCard(
             4,
             PALETTE["purple"],
-            "Comunique também a Prefeitura de Valparaíso",
+            "Comunique também a Prefeitura de %s" % M["nome"],
             [
                 p("Além das medidas policiais, o morador pode comunicar o fato à Prefeitura Municipal, permitindo a adoção das providências administrativas cabíveis."),
-                p("A <b>Lei Municipal nº 1.415/1993 (Código de Posturas)</b> proíbe expressamente perturbar o sossego público com ruídos ou sons excessivos. O <b>Decreto Municipal nº 4.947/2026</b> instituiu o <b>Grupo Integrado de Ações Fiscalizatórias (GIAF)</b>, cuja prioridade é prevenir e coibir a perturbação do sossego público."),
-                callout("<b>Prefeitura de Valparaíso:</b> (18) 3401-9200", PALETTE["purple"]),
+                p(M["legislacao_resumo"]),
+                callout("<b>Prefeitura de %s:</b> %s" % (M["nome"], M["telefone"]), PALETTE["purple"]),
             ],
         ),
         Spacer(1, 12),
@@ -565,8 +676,7 @@ def build():
             [
                 bullet("<b>Art. 42 da Lei de Contravenções Penais</b> - Perturbação do trabalho ou do sossego alheios."),
                 bullet("<b>Art. 1.277 do Código Civil</b> - Direito ao sossego, à saúde e à segurança nas relações de vizinhança."),
-                bullet("<b>Lei Municipal nº 1.415/1993</b> (Código de Posturas de Valparaíso/SP) - Proíbe perturbar o sossego público com ruídos ou sons excessivos."),
-                bullet("<b>Decreto Municipal nº 4.947/2026</b> - Institui o Grupo Integrado de Ações Fiscalizatórias (GIAF), voltado à prevenção e ao combate da perturbação do sossego público."),
+                *[bullet(b) for b in M["legislacao_bullets"]],
             ],
             PALETTE["violet_bg"],
             colors.HexColor("#D9C8FF"),
@@ -601,5 +711,23 @@ def build():
     print(OUT)
 
 
-if __name__ == "__main__":
+def gerar(chave):
+    """Gera o guia de um municipio."""
+    global M, OUT
+    M = MUNICIPIOS[chave]
+    OUT = SAIDA / M["arquivo"]
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     build()
+
+
+if __name__ == "__main__":
+    import sys
+
+    pedidos = sys.argv[1:] or list(MUNICIPIOS)
+    desconhecidos = [c for c in pedidos if c not in MUNICIPIOS]
+    if desconhecidos:
+        print("Municipio desconhecido: %s" % ", ".join(desconhecidos))
+        print("Use um destes: %s" % ", ".join(MUNICIPIOS))
+        raise SystemExit(1)
+    for chave in pedidos:
+        gerar(chave)
